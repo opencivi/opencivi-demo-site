@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenCivi 演示公司</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+           background: #f5f7fa; color: #1a1a2e; }
+    header { background: #16213e; color: white; padding: 16px 32px;
+             display: flex; align-items: center; justify-content: space-between; }
+    header h1 { font-size: 20px; font-weight: 700; }
+    nav a { color: #a8b2d8; text-decoration: none; margin-left: 24px; font-size: 14px; }
+    nav a:hover { color: white; }
+    .hero { background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            color: white; text-align: center; padding: 80px 32px; }
+    .hero h2 { font-size: 42px; font-weight: 800; margin-bottom: 16px; }
+    .hero p { font-size: 18px; color: #a8b2d8; margin-bottom: 32px; }
+    .btn { display: inline-block; background: #e94560; color: white; padding: 14px 32px;
+           border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+                padding: 64px 32px; max-width: 1100px; margin: 0 auto; }
+    .card { background: white; border-radius: 12px; padding: 28px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+    .card .icon { font-size: 32px; margin-bottom: 12px; }
+    .card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #16213e; }
+    .card p { font-size: 14px; color: #666; line-height: 1.6; }
+    .pricing { background: #16213e; color: white; padding: 64px 32px; text-align: center; }
+    .pricing h2 { font-size: 32px; margin-bottom: 40px; }
+    .plans { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+    .plan { background: #0f3460; border-radius: 12px; padding: 32px; width: 220px; }
+    .plan.popular { border: 2px solid #e94560; background: #1a4a7a; }
+    .plan h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+    .plan .price { font-size: 36px; font-weight: 800; color: #e94560; margin: 12px 0; }
+    .plan p { font-size: 13px; color: #a8b2d8; }
+    footer { text-align: center; padding: 24px; color: #888; font-size: 13px;
+             border-top: 1px solid #e5e7eb; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚀 OpenCivi</h1>
+    <nav>
+      <a href="#">产品</a>
+      <a href="#">价格</a>
+      <a href="#">文档</a>
+      <a href="#">联系我们</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>AI 驱动的<br>企业级开发平台</h2>
+    <p>让每个人都能修改自己的网站，无需雇佣开发团队</p>
+    <a href="#" class="btn">免费开始使用</a>
+  </section>
+
+  <section class="features">
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>极速交付</h3>
+      <p>AI 工程师秒级响应，分钟级完成代码修改，告别漫长的开发周期。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔒</div>
+      <h3>安全可靠</h3>
+      <p>所有修改通过 Pull Request 审核，代码变更完全透明可控。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🌐</div>
+      <h3>零门槛使用</h3>
+      <p>无需技术背景，用中文描述需求，AI 自动完成开发工作。</p>
+    </div>
+  </section>
+
+  <section class="pricing">
+    <h2>简单透明的定价</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>免费版</h3>
+        <div class="price">¥0</div>
+        <p>每月 10 次修改，适合个人体验</p>
+      </div>
+      <div class="plan popular">
+        <h3>Pro 版 ⭐</h3>
+        <div class="price">¥99</div>
+        <p>每月 200 次修改，适合小型团队</p>
+      </div>
+      <div class="plan">
+        <h3>团队版</h3>
+        <div class="price">¥499</div>
+        <p>每月 2000 次修改，适合企业使用</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 OpenCivi. All rights reserved.</p>
+  </footer>
+</body>
+</html>
