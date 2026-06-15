@@ -3,115 +3,187 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OpenCivi 演示公司</title>
+  <title>我的博客</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-           background: #f5f7fa; color: #1a1a2e; }
-    header { background: #16213e; color: white; padding: 16px 32px;
-             display: flex; align-items: center; justify-content: space-between; }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .logo-wordmark { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; color: white; }
-    .logo-wordmark span { color: #e94560; }
-    nav a { color: #a8b2d8; text-decoration: none; margin-left: 24px; font-size: 14px; }
-    nav a:hover { color: white; }
-    .hero { background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
-            color: white; text-align: center; padding: 80px 32px; }
-    .hero h2 { font-size: 42px; font-weight: 800; margin-bottom: 16px; }
-    .hero p { font-size: 18px; color: #a8b2d8; margin-bottom: 32px; }
-    .btn { display: inline-block; background: #e94560; color: white; padding: 14px 32px;
-           border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; }
-    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-                padding: 64px 32px; max-width: 1100px; margin: 0 auto; }
-    .card { background: white; border-radius: 12px; padding: 28px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
-    .card .icon { font-size: 32px; margin-bottom: 12px; }
-    .card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #16213e; }
-    .card p { font-size: 14px; color: #666; line-height: 1.6; }
-    .pricing { background: #16213e; color: white; padding: 64px 32px; text-align: center; }
-    .pricing h2 { font-size: 32px; margin-bottom: 40px; }
-    .plans { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
-    .plan { background: #0f3460; border-radius: 12px; padding: 32px; width: 220px; }
-    .plan.popular { border: 2px solid #e94560; background: #1a4a7a; }
-    .plan h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
-    .plan .price { font-size: 36px; font-weight: 800; color: #e94560; margin: 12px 0; }
-    .plan p { font-size: 13px; color: #a8b2d8; }
-    footer { text-align: center; padding: 24px; color: #888; font-size: 13px;
-             border-top: 1px solid #e5e7eb; }
+           background: #fafafa; color: #222; line-height: 1.7; }
+
+    /* Header */
+    header { background: white; border-bottom: 1px solid #e8e8e8;
+             padding: 0 32px; display: flex; align-items: center;
+             justify-content: space-between; height: 60px; }
+    .blog-title { font-size: 22px; font-weight: 800; color: #111;
+                  text-decoration: none; letter-spacing: -0.5px; }
+    .blog-title span { color: #e94560; }
+    nav a { color: #555; text-decoration: none; margin-left: 24px; font-size: 14px; }
+    nav a:hover { color: #e94560; }
+
+    /* Author intro */
+    .author-intro { background: white; border-bottom: 1px solid #e8e8e8;
+                    padding: 48px 32px; display: flex; align-items: center;
+                    gap: 28px; max-width: 860px; margin: 0 auto; }
+    .avatar { width: 80px; height: 80px; border-radius: 50%;
+              background: linear-gradient(135deg, #e94560, #7c3aed);
+              display: flex; align-items: center; justify-content: center;
+              font-size: 36px; flex-shrink: 0; }
+    .author-info h1 { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
+    .author-info p { font-size: 15px; color: #666; }
+    .author-tags { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .tag { background: #f0f0f0; color: #444; border-radius: 20px;
+           padding: 4px 12px; font-size: 12px; }
+
+    /* Layout */
+    .container { max-width: 860px; margin: 0 auto; padding: 40px 32px;
+                 display: grid; grid-template-columns: 1fr 260px; gap: 40px; }
+    @media (max-width: 700px) {
+      .container { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+    }
+
+    /* Post list */
+    .post-list { display: flex; flex-direction: column; gap: 24px; }
+    .post-card { background: white; border-radius: 10px; padding: 28px;
+                 border: 1px solid #e8e8e8; transition: box-shadow 0.2s; }
+    .post-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .post-meta { display: flex; align-items: center; gap: 12px;
+                 margin-bottom: 10px; }
+    .post-category { background: #fff0f2; color: #e94560; border-radius: 4px;
+                     padding: 2px 8px; font-size: 12px; font-weight: 600; }
+    .post-date { font-size: 12px; color: #999; }
+    .post-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 10px;
+                    color: #111; }
+    .post-card h2 a { text-decoration: none; color: inherit; }
+    .post-card h2 a:hover { color: #e94560; }
+    .post-card p { font-size: 14px; color: #666; line-height: 1.7; }
+    .read-more { display: inline-block; margin-top: 14px; font-size: 13px;
+                 color: #e94560; text-decoration: none; font-weight: 600; }
+
+    /* Sidebar */
+    .sidebar { display: flex; flex-direction: column; gap: 24px; }
+    .widget { background: white; border-radius: 10px; padding: 24px;
+              border: 1px solid #e8e8e8; }
+    .widget h3 { font-size: 14px; font-weight: 700; color: #111;
+                 margin-bottom: 16px; text-transform: uppercase;
+                 letter-spacing: 0.5px; }
+    .widget ul { list-style: none; }
+    .widget ul li { padding: 6px 0; border-bottom: 1px solid #f0f0f0;
+                    font-size: 14px; color: #555; }
+    .widget ul li:last-child { border-bottom: none; }
+    .widget ul li a { text-decoration: none; color: inherit; }
+    .widget ul li a:hover { color: #e94560; }
+    .category-list li { display: flex; justify-content: space-between; }
+    .category-count { color: #aaa; font-size: 12px; }
+
+    footer { text-align: center; padding: 32px; color: #999; font-size: 13px;
+             border-top: 1px solid #e8e8e8; margin-top: 20px; }
   </style>
 </head>
 <body>
   <header>
-    <a href="#" class="logo">
-      <svg width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="logoBg" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#e94560"/>
-            <stop offset="100%" stop-color="#7c3aed"/>
-          </linearGradient>
-        </defs>
-        <polygon points="20,2 37,11.5 37,28.5 20,38 3,28.5 3,11.5" fill="url(#logoBg)"/>
-        <circle cx="14.5" cy="20" r="5.5" stroke="white" stroke-width="2.2" fill="none"/>
-        <path d="M22 14.5h4.5a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H22" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <line x1="20" y1="20" x2="22" y2="20" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-      </svg>
-      <span class="logo-wordmark">Open<span>Civi</span></span>
-    </a>
+    <a href="#" class="blog-title">Leo<span>'s</span> Blog</a>
     <nav>
-      <a href="#">产品</a>
-      <a href="#">价格</a>
-      <a href="#">文档</a>
-      <a href="#">联系我们</a>
+      <a href="#">首页</a>
+      <a href="#">分类</a>
+      <a href="#">归档</a>
+      <a href="#">关于我</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>AI 驱动的<br>企业级开发平台</h2>
-    <p>让每个人都能修改自己的网站，无需雇佣开发团队</p>
-    <a href="#" class="btn">免费使用</a>
-  </section>
+  <div style="background: white; border-bottom: 1px solid #e8e8e8;">
+    <div class="author-intro">
+      <div class="avatar">👨‍💻</div>
+      <div class="author-info">
+        <h1>Leo</h1>
+        <p>写代码，读闲书，偶尔思考人生。记录技术与生活的点滴。</p>
+        <div class="author-tags">
+          <span class="tag">前端开发</span>
+          <span class="tag">AI 应用</span>
+          <span class="tag">开源爱好者</span>
+          <span class="tag">上海</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <section class="features">
-    <div class="card">
-      <div class="icon">⚡</div>
-      <h3>极速模式</h3>
-      <p>AI 工程师秒级响应，分钟级完成代码修改，告别漫长的开发周期。</p>
-    </div>
-    <div class="card">
-      <div class="icon">🔒</div>
-      <h3>不免费</h3>
-      <p>所有修改通过 Pull Request 审核，代码变更完全透明可控。</p>
-    </div>
-    <div class="card">
-      <div class="icon">🌐</div>
-      <h3>非常慢</h3>
-      <p>无需技术背景，用中文描述需求，AI 自动完成开发工作。</p>
-    </div>
-  </section>
+  <div class="container">
+    <main class="post-list">
+      <article class="post-card">
+        <div class="post-meta">
+          <span class="post-category">AI</span>
+          <span class="post-date">2026-06-10</span>
+        </div>
+        <h2><a href="#">用 Claude 构建一个能自己改代码的 Agent</a></h2>
+        <p>最近在探索 AI Agent 的边界，发现让模型直接操作代码仓库并提交 PR 是完全可行的。这篇文章记录了我从零搭建这个系统的过程，以及踩过的那些坑……</p>
+        <a href="#" class="read-more">继续阅读 →</a>
+      </article>
 
-  <section class="pricing">
-    <h2>简单透明的定价</h2>
-    <div class="plans">
-      <div class="plan">
-        <h3>免费版</h3>
-        <div class="price">¥0</div>
-        <p>每月 10 次修改，适合个人体验</p>
+      <article class="post-card">
+        <div class="post-meta">
+          <span class="post-category">工具</span>
+          <span class="post-date">2026-05-28</span>
+        </div>
+        <h2><a href="#">我的 2026 开发环境配置</a></h2>
+        <p>每隔一两年我都会整理一次自己的开发环境。这次从 zsh 配置、VSCode 插件到终端美化，全面更新了一遍，顺便记录下来方便以后换机器。</p>
+        <a href="#" class="read-more">继续阅读 →</a>
+      </article>
+
+      <article class="post-card">
+        <div class="post-meta">
+          <span class="post-category">思考</span>
+          <span class="post-date">2026-05-14</span>
+        </div>
+        <h2><a href="#">软件工程师还有未来吗？</a></h2>
+        <p>AI 写代码越来越强，身边的朋友开始焦虑了。我倒觉得，能和 AI 协作的工程师会越来越值钱——问题是你得先搞清楚自己在这个协作里扮演什么角色。</p>
+        <a href="#" class="read-more">继续阅读 →</a>
+      </article>
+
+      <article class="post-card">
+        <div class="post-meta">
+          <span class="post-category">前端</span>
+          <span class="post-date">2026-04-30</span>
+        </div>
+        <h2><a href="#">CSS Grid 实战：我最常用的几个布局模式</a></h2>
+        <p>Grid 用了三年，终于有底气说自己搞懂了。整理了五个高频场景：等高卡片、响应式瀑布流、粘性侧边栏……每个都有可以直接复制的代码片段。</p>
+        <a href="#" class="read-more">继续阅读 →</a>
+      </article>
+    </main>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>分类</h3>
+        <ul class="category-list">
+          <li><a href="#">AI <span class="category-count">8</span></a></li>
+          <li><a href="#">前端 <span class="category-count">12</span></a></li>
+          <li><a href="#">工具 <span class="category-count">6</span></a></li>
+          <li><a href="#">思考 <span class="category-count">9</span></a></li>
+          <li><a href="#">读书 <span class="category-count">4</span></a></li>
+        </ul>
       </div>
-      <div class="plan popular">
-        <h3>极速版 ⭐</h3>
-        <div class="price">¥99</div>
-        <p>每月 200 次修改，适合小型团队</p>
+
+      <div class="widget">
+        <h3>近期文章</h3>
+        <ul>
+          <li><a href="#">用 Claude 构建 Agent</a></li>
+          <li><a href="#">2026 开发环境配置</a></li>
+          <li><a href="#">软件工程师还有未来吗</a></li>
+          <li><a href="#">CSS Grid 实战</a></li>
+        </ul>
       </div>
-      <div class="plan">
-        <h3>团队版</h3>
-        <div class="price">¥499</div>
-        <p>每月 2000 次修改，适合企业使用</p>
+
+      <div class="widget">
+        <h3>联系我</h3>
+        <ul>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">Twitter / X</a></li>
+          <li><a href="#">邮件</a></li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </aside>
+  </div>
 
   <footer>
-    <p>© 2026 OpenCivi. All rights reserved.</p>
+    <p>© 2026 Leo's Blog · 用 ❤️ 和 ☕ 写就</p>
   </footer>
 </body>
 </html>
