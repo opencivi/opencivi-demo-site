@@ -1,294 +1,533 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BuildAI — 用 AI，把你的想法变成产品</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mama Rosa's Kitchen — Italian-American Restaurant Since 1987</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-           background: #0a0a0f; color: #e8e8f0; line-height: 1.7; }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fdf8f0;
+      color: #2c1a0e;
+      line-height: 1.6;
+    }
 
     /* Header */
-    header { position: sticky; top: 0; z-index: 100;
-             background: rgba(10,10,15,0.85); backdrop-filter: blur(12px);
-             border-bottom: 1px solid rgba(255,255,255,0.08);
-             padding: 0 40px; display: flex; align-items: center;
-             justify-content: space-between; height: 64px; }
-    .logo { font-size: 20px; font-weight: 800; color: #fff;
-            text-decoration: none; letter-spacing: -0.5px; }
-    .logo span { background: linear-gradient(90deg, #7c3aed, #06b6d4);
-                 -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    nav { display: flex; align-items: center; gap: 32px; }
-    nav a { color: #aaa; text-decoration: none; font-size: 14px; transition: color 0.2s; }
-    nav a:hover { color: #fff; }
-    .btn-nav { background: linear-gradient(135deg, #7c3aed, #06b6d4);
-               color: #fff !important; padding: 8px 20px; border-radius: 8px;
-               font-weight: 600; font-size: 14px; }
+    header {
+      background: #6b1515;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      border-bottom: 4px solid #daa520;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-text {
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .logo-text span { color: #daa520; }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a {
+      color: #f5e6c8;
+      text-decoration: none;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: #daa520; }
+    .btn-reserve {
+      background: #daa520;
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 3px;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Notice bar */
+    .notice-bar {
+      background: #fff8e1;
+      border-bottom: 1px solid #e6c47a;
+      padding: 9px 40px;
+      text-align: center;
+      font-size: 13px;
+      font-family: Arial, sans-serif;
+      color: #5a4000;
+    }
+    .notice-bar strong { color: #8b0000; }
 
     /* Hero */
-    .hero { max-width: 860px; margin: 0 auto;
-            padding: 100px 40px 80px; text-align: center; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px;
-                  background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.4);
-                  color: #a78bfa; border-radius: 100px; padding: 6px 16px;
-                  font-size: 13px; font-weight: 600; margin-bottom: 32px; }
-    .hero h1 { font-size: 58px; font-weight: 900; line-height: 1.15;
-               letter-spacing: -2px; color: #fff; margin-bottom: 24px; }
-    .hero h1 .grad { background: linear-gradient(90deg, #7c3aed, #06b6d4);
-                     -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero p { font-size: 19px; color: #888; max-width: 560px;
-              margin: 0 auto 40px; line-height: 1.8; }
-    .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: linear-gradient(135deg, #7c3aed, #06b6d4);
-                   color: #fff; padding: 14px 32px; border-radius: 10px;
-                   font-size: 16px; font-weight: 700; text-decoration: none;
-                   display: inline-block; transition: opacity 0.2s; }
-    .btn-primary:hover { opacity: 0.88; }
-    .btn-secondary { color: #ccc; padding: 14px 32px; border-radius: 10px;
-                     font-size: 16px; font-weight: 600; text-decoration: none;
-                     border: 1px solid rgba(255,255,255,0.15); display: inline-block;
-                     transition: border-color 0.2s, color 0.2s; }
-    .btn-secondary:hover { border-color: rgba(255,255,255,0.4); color: #fff; }
-    .hero-note { margin-top: 20px; font-size: 13px; color: #555; }
+    .hero {
+      background: linear-gradient(160deg, #6b1515 0%, #8b2222 45%, #4a0e0e 100%);
+      color: #fff;
+      text-align: center;
+      padding: 90px 40px 80px;
+      border-bottom: 5px solid #daa520;
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #daa520;
+      font-family: Arial, sans-serif;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-size: 58px;
+      font-weight: bold;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    }
+    .hero-tagline {
+      font-size: 19px;
+      color: #f5e6c8;
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+    .hero-years {
+      font-size: 13px;
+      color: #c4a882;
+      margin-bottom: 40px;
+      font-family: Arial, sans-serif;
+    }
+    .hero-hours {
+      display: inline-block;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(218,165,32,0.45);
+      padding: 14px 36px;
+      border-radius: 3px;
+      font-size: 14px;
+      color: #f5e6c8;
+      font-family: Arial, sans-serif;
+      line-height: 2;
+      margin-bottom: 34px;
+    }
+    .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-gold {
+      background: #daa520;
+      color: #fff;
+      padding: 13px 30px;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 3px;
+      font-family: Arial, sans-serif;
+    }
+    .btn-outline-white {
+      background: transparent;
+      color: #f5e6c8;
+      padding: 13px 30px;
+      font-size: 15px;
+      text-decoration: none;
+      border: 2px solid rgba(245,230,200,0.6);
+      border-radius: 3px;
+      font-family: Arial, sans-serif;
+    }
 
-    /* Social proof */
-    .social-proof { border-top: 1px solid rgba(255,255,255,0.06);
-                    border-bottom: 1px solid rgba(255,255,255,0.06);
-                    padding: 32px 40px; text-align: center; }
-    .social-proof p { font-size: 13px; color: #555; margin-bottom: 20px;
-                      text-transform: uppercase; letter-spacing: 1px; }
-    .logos { display: flex; justify-content: center; align-items: center;
-             gap: 48px; flex-wrap: wrap; }
-    .logos span { font-size: 15px; font-weight: 700; color: #444;
-                  letter-spacing: -0.3px; }
+    /* Ornament */
+    .ornament {
+      text-align: center;
+      padding: 36px 0 0;
+      font-size: 22px;
+      color: #8b1a1a;
+      opacity: 0.35;
+      letter-spacing: 12px;
+    }
 
-    /* Features */
-    .section { max-width: 1000px; margin: 0 auto; padding: 80px 40px; }
-    .section-label { font-size: 13px; font-weight: 700; color: #7c3aed;
-                     text-transform: uppercase; letter-spacing: 1.5px;
-                     margin-bottom: 14px; }
-    .section-title { font-size: 40px; font-weight: 900; color: #fff;
-                     letter-spacing: -1.5px; line-height: 1.2; margin-bottom: 16px; }
-    .section-sub { font-size: 17px; color: #777; max-width: 500px; }
+    /* Sections */
+    .section {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+    .section-title {
+      font-size: 34px;
+      font-weight: bold;
+      color: #6b1515;
+      display: inline-block;
+      border-bottom: 3px solid #daa520;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+    }
+    .section-sub {
+      font-size: 15px;
+      color: #7a5c3a;
+      margin-bottom: 44px;
+      font-family: Arial, sans-serif;
+    }
 
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr);
-                     gap: 24px; margin-top: 56px; }
-    @media (max-width: 720px) { .features-grid { grid-template-columns: 1fr; } }
-    .feature-card { background: rgba(255,255,255,0.04);
-                    border: 1px solid rgba(255,255,255,0.08);
-                    border-radius: 16px; padding: 32px;
-                    transition: border-color 0.2s, background 0.2s; }
-    .feature-card:hover { border-color: rgba(124,58,237,0.4);
-                          background: rgba(124,58,237,0.06); }
-    .feature-icon { font-size: 32px; margin-bottom: 18px; }
-    .feature-card h3 { font-size: 18px; font-weight: 700; color: #fff;
-                       margin-bottom: 10px; }
-    .feature-card p { font-size: 14px; color: #777; line-height: 1.8; }
+    /* Menu */
+    .menu-category { margin-bottom: 52px; }
+    .menu-category h3 {
+      font-size: 22px;
+      color: #8b1a1a;
+      font-style: italic;
+      border-left: 4px solid #daa520;
+      padding-left: 12px;
+      margin-bottom: 20px;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 40px;
+    }
+    @media(max-width: 600px) { .menu-grid { grid-template-columns: 1fr; } }
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 13px 0;
+      border-bottom: 1px dotted #c8a97a;
+      gap: 16px;
+    }
+    .menu-item-info h4 {
+      font-size: 15px;
+      font-weight: bold;
+      color: #2c1a0e;
+      margin-bottom: 3px;
+    }
+    .menu-item-info p {
+      font-size: 13px;
+      color: #7a5c3a;
+      font-family: Arial, sans-serif;
+    }
+    .menu-price {
+      font-size: 15px;
+      font-weight: bold;
+      color: #6b1515;
+      white-space: nowrap;
+      font-family: Arial, sans-serif;
+      padding-top: 2px;
+    }
 
-    /* How it works */
-    .steps { display: flex; flex-direction: column; gap: 0; margin-top: 56px; }
-    .step { display: flex; gap: 32px; align-items: flex-start; padding: 32px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .step:last-child { border-bottom: none; }
-    .step-num { width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
-                background: linear-gradient(135deg, #7c3aed, #06b6d4);
-                display: flex; align-items: center; justify-content: center;
-                font-size: 18px; font-weight: 900; color: #fff; }
-    .step-content h3 { font-size: 20px; font-weight: 700; color: #fff;
-                       margin-bottom: 8px; }
-    .step-content p { font-size: 15px; color: #777; }
+    /* About */
+    .about-bg {
+      background: #fdf0dc;
+      border-top: 1px solid #e8d5a8;
+      border-bottom: 1px solid #e8d5a8;
+    }
+    .about-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 60px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.7fr;
+      gap: 52px;
+      align-items: center;
+    }
+    @media(max-width: 680px) { .about-inner { grid-template-columns: 1fr; } }
+    .about-photo {
+      background: linear-gradient(145deg, #8b2222, #5a1010);
+      border-radius: 4px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 90px;
+      border: 4px solid #daa520;
+    }
+    .about-text h2 {
+      font-size: 30px;
+      color: #6b1515;
+      margin-bottom: 18px;
+    }
+    .about-text p {
+      font-size: 15px;
+      color: #4a3520;
+      line-height: 1.9;
+      margin-bottom: 14px;
+      font-family: Arial, sans-serif;
+    }
+    .about-signature {
+      font-size: 21px;
+      color: #8b1a1a;
+      font-style: italic;
+      margin-top: 10px;
+    }
 
-    /* Testimonials */
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr);
-                         gap: 20px; margin-top: 56px; }
-    @media (max-width: 720px) { .testimonials-grid { grid-template-columns: 1fr; } }
-    .testimonial { background: rgba(255,255,255,0.04);
-                   border: 1px solid rgba(255,255,255,0.08);
-                   border-radius: 16px; padding: 28px; }
-    .testimonial-text { font-size: 15px; color: #ccc; line-height: 1.8;
-                        margin-bottom: 20px; }
-    .testimonial-author { display: flex; align-items: center; gap: 12px; }
-    .testimonial-avatar { width: 40px; height: 40px; border-radius: 50%;
-                          background: linear-gradient(135deg, #7c3aed, #06b6d4);
-                          display: flex; align-items: center; justify-content: center;
-                          font-size: 18px; flex-shrink: 0; }
-    .testimonial-name { font-size: 14px; font-weight: 700; color: #fff; }
-    .testimonial-role { font-size: 12px; color: #666; }
-
-    /* CTA section */
-    .cta-section { text-align: center; padding: 80px 40px 100px; }
-    .cta-box { max-width: 640px; margin: 0 auto;
-               background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(6,182,212,0.1));
-               border: 1px solid rgba(124,58,237,0.3);
-               border-radius: 24px; padding: 64px 48px; }
-    .cta-box h2 { font-size: 38px; font-weight: 900; color: #fff;
-                  letter-spacing: -1.5px; line-height: 1.2; margin-bottom: 16px; }
-    .cta-box p { font-size: 16px; color: #888; margin-bottom: 36px; }
+    /* Hours */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+    }
+    @media(max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-box h3 {
+      font-size: 20px;
+      color: #6b1515;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #daa520;
+      padding-bottom: 8px;
+    }
+    .hours-table {
+      width: 100%;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      border-collapse: collapse;
+    }
+    .hours-table td { padding: 8px 0; color: #4a3520; }
+    .hours-table td:last-child {
+      text-align: right;
+      font-weight: bold;
+      color: #2c1a0e;
+    }
+    .address-block {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #4a3520;
+      line-height: 2;
+    }
+    .phone {
+      display: block;
+      font-size: 24px;
+      font-weight: bold;
+      color: #6b1515;
+      margin-bottom: 14px;
+    }
+    .dine-only-badge {
+      display: inline-block;
+      margin-top: 18px;
+      background: #fff8e1;
+      border: 1px solid #e6c47a;
+      color: #5a4000;
+      padding: 6px 14px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-family: Arial, sans-serif;
+    }
 
     /* Footer */
-    footer { border-top: 1px solid rgba(255,255,255,0.08);
-             padding: 32px 40px; display: flex; align-items: center;
-             justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-    .footer-logo { font-size: 16px; font-weight: 800; color: #444; }
-    footer p { font-size: 13px; color: #444; }
+    footer {
+      background: #2c1a0e;
+      color: #8a6840;
+      padding: 36px 40px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      border-top: 4px solid #6b1515;
+      line-height: 2;
+    }
+    footer .footer-name {
+      color: #daa520;
+      font-size: 17px;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <a href="#" class="logo">Build<span>AI</span></a>
+    <a href="#" class="logo-text">Mama Rosa's <span>Kitchen</span></a>
     <nav>
-      <a href="#features">功能</a>
-      <a href="#how">如何使用</a>
-      <a href="#stories">用户故事</a>
-      <a href="#" class="btn-nav">免费开始</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">Our Story</a>
+      <a href="#hours">Hours</a>
+      <a href="#contact" class="btn-reserve">Reserve a Table</a>
     </nav>
   </header>
 
+  <div class="notice-bar">
+    🍽️ &nbsp;<strong>Dine-In Only</strong>&nbsp; · &nbsp;No delivery or takeout at this time&nbsp; · &nbsp;Walk-ins welcome · Call ahead for parties of 6+
+  </div>
+
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-badge">✦ AI 原生开发平台 · 现已开放内测</div>
-    <h1>不懂代码，<br>也能做出<span class="grad">自己的产品</span></h1>
-    <p>用对话描述你的想法，AI 帮你完成设计、编码、发布。从 0 到上线，最快一个小时。</p>
-    <div class="hero-cta">
-      <a href="#" class="btn-primary">免费体验 →</a>
-      <a href="#how" class="btn-secondary">看看怎么用</a>
+    <div class="hero-eyebrow">Italian-American Home Cooking · Springfield, IL</div>
+    <h1>Mama Rosa's Kitchen</h1>
+    <p class="hero-tagline">"Where every meal tastes like Sunday dinner"</p>
+    <p class="hero-years">Proudly serving our community since 1987 &mdash; 37 years of family recipes</p>
+    <div class="hero-hours">
+      Mon – Thu &nbsp; 11am – 9pm &nbsp;&nbsp;|&nbsp;&nbsp; Fri – Sat &nbsp; 11am – 10pm &nbsp;&nbsp;|&nbsp;&nbsp; Sun &nbsp; 12pm – 8pm
     </div>
-    <p class="hero-note">无需信用卡 · 5 分钟上手 · 永久免费套餐</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-gold">Reserve a Table</a>
+      <a href="#menu" class="btn-outline-white">View Our Menu</a>
+    </div>
   </section>
 
-  <!-- Social proof -->
-  <div class="social-proof">
-    <p>已有创业者、设计师、产品经理在使用</p>
-    <div class="logos">
-      <span>餐饮老板</span>
-      <span>独立设计师</span>
-      <span>连锁门店主</span>
-      <span>自媒体创作者</span>
-      <span>教育从业者</span>
+  <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+
+  <!-- Menu -->
+  <section class="section" id="menu">
+    <h2 class="section-title">Our Menu</h2>
+    <p class="section-sub">Made fresh daily from Mama Rosa's original recipes. Ask your server about today's specials.</p>
+
+    <div class="menu-category">
+      <h3>Starters</h3>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Garlic Bread</h4>
+            <p>Toasted with herb butter, served warm</p>
+          </div>
+          <span class="menu-price">$6.50</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Minestrone Soup</h4>
+            <p>Mama Rosa's daily recipe, cup or bowl</p>
+          </div>
+          <span class="menu-price">$7 / $11</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Caprese Salad</h4>
+            <p>Fresh mozzarella, tomato, basil, olive oil</p>
+          </div>
+          <span class="menu-price">$13</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Bruschetta</h4>
+            <p>Grilled bread with tomato, garlic, fresh basil</p>
+          </div>
+          <span class="menu-price">$9</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h3>Pasta &amp; Mains</h3>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Spaghetti &amp; Meatballs</h4>
+            <p>Hand-rolled beef meatballs, Sunday gravy</p>
+          </div>
+          <span class="menu-price">$18</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Chicken Parmigiana</h4>
+            <p>Breaded chicken, marinara, melted mozzarella</p>
+          </div>
+          <span class="menu-price">$22</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Fettuccine Alfredo</h4>
+            <p>Homemade pasta, butter cream sauce</p>
+          </div>
+          <span class="menu-price">$17</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Eggplant Parmigiana</h4>
+            <p>Vegetarian. Layered with ricotta and marinara</p>
+          </div>
+          <span class="menu-price">$16</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Veal Marsala</h4>
+            <p>Pan-seared veal, mushrooms, Marsala wine sauce</p>
+          </div>
+          <span class="menu-price">$26</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Lasagna della Nonna</h4>
+            <p>Beef, ricotta, béchamel — Mama's signature dish</p>
+          </div>
+          <span class="menu-price">$20</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-category">
+      <h3>Desserts</h3>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Tiramisu</h4>
+            <p>Made in-house every morning</p>
+          </div>
+          <span class="menu-price">$9</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Cannoli</h4>
+            <p>Crispy shell, sweet ricotta, chocolate chips</p>
+          </div>
+          <span class="menu-price">$8</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Panna Cotta</h4>
+            <p>Vanilla cream, seasonal berry compote</p>
+          </div>
+          <span class="menu-price">$8</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info">
+            <h4>Gelato (2 scoops)</h4>
+            <p>Ask your server for today's flavors</p>
+          </div>
+          <span class="menu-price">$7</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <div class="about-bg" id="about">
+    <div class="about-inner">
+      <div class="about-photo">🍝</div>
+      <div class="about-text">
+        <h2>Our Story</h2>
+        <p>In 1987, Rosa Marchetti opened a small kitchen on Elm Street with one goal: to share the food she grew up cooking in Naples with her new hometown. What started as a 12-table diner has grown into a beloved neighborhood staple — but the recipes haven't changed one bit.</p>
+        <p>Today, Rosa's daughter Maria and son-in-law Tony run the kitchen together, using the same handwritten recipe book Rosa brought from Italy. Every sauce is made from scratch. Every pasta is rolled by hand. Every dessert is baked on-site.</p>
+        <p>We don't do takeout. We don't do delivery. We believe good food deserves to be eaten at a table, with people you love.</p>
+        <div class="about-signature">— Mama Rosa &amp; Family</div>
+      </div>
     </div>
   </div>
 
-  <!-- Features -->
-  <section class="section" id="features">
-    <div class="section-label">核心能力</div>
-    <h2 class="section-title">技术的事，交给 AI</h2>
-    <p class="section-sub">你只需要知道自己想要什么，剩下的交给我们。</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">💬</div>
-        <h3>对话即开发</h3>
-        <p>像聊天一样描述你的需求，AI 自动生成完整的前后端代码，无需了解任何编程语言。</p>
+  <!-- Hours & Location -->
+  <section class="section" id="hours">
+    <h2 class="section-title">Hours &amp; Location</h2>
+    <p class="section-sub">Right in the heart of the neighborhood. Free parking available behind the building.</p>
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>Opening Hours</h3>
+        <table class="hours-table">
+          <tr><td>Monday – Thursday</td><td>11:00 am – 9:00 pm</td></tr>
+          <tr><td>Friday – Saturday</td><td>11:00 am – 10:00 pm</td></tr>
+          <tr><td>Sunday</td><td>12:00 pm – 8:00 pm</td></tr>
+        </table>
+        <div class="dine-only-badge">🍴 Dine-In Only &mdash; No delivery or takeout</div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎨</div>
-        <h3>一键生成 UI</h3>
-        <p>输入你的品牌颜色和风格偏好，AI 帮你设计出专业级别的界面，好看又好用。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <h3>即刻发布上线</h3>
-        <p>点一下「发布」，你的产品就自动部署到云端，随时可以分享链接给用户使用。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔧</div>
-        <h3>随时迭代修改</h3>
-        <p>想加一个功能？告诉 AI，几分钟内更新完毕。产品迭代从未如此轻松快速。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <h3>数据安全可控</h3>
-        <p>你的数据完全属于你。支持自定义域名、独立数据库，企业级安全标准保障。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <h3>内置数据分析</h3>
-        <p>自动统计用户行为和产品数据，用简单易懂的图表呈现，帮你做出更好的决策。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works -->
-  <section class="section" id="how">
-    <div class="section-label">使用流程</div>
-    <h2 class="section-title">三步，从想法到产品</h2>
-    <p class="section-sub">不需要学习任何技术，跟着步骤走就能搞定。</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h3>描述你的想法</h3>
-          <p>用中文说出你想做什么——比如「我想做一个帮餐厅接受外卖预约的小程序」。越具体越好，AI 会主动追问细节。</p>
+      <div class="info-box" id="contact">
+        <h3>Find Us &amp; Reservations</h3>
+        <div class="address-block">
+          <span class="phone">📞 (555) 482-9301</span>
+          247 Elm Street<br>
+          Springfield, IL 62701<br><br>
+          <strong>Reservations recommended on weekends.</strong><br>
+          Call ahead or stop by — we'll always try to fit you in.
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h3>AI 帮你构建</h3>
-          <p>AI 自动完成产品设计、界面搭建和功能开发，过程中会实时预览，你可以随时调整直到满意为止。</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h3>发布，开始使用</h3>
-          <p>一键发布到公网，获得专属链接和二维码，分享给你的用户，产品正式上线。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="section" id="stories">
-    <div class="section-label">用户故事</div>
-    <h2 class="section-title">他们都做到了</h2>
-    <p class="section-sub">来自各行各业的普通人，用 AI 把想法变成了真实产品。</p>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <p class="testimonial-text">「我开了十年餐厅，从没想过自己能做一个预约管理系统。用 BuildAI 两个小时就搞定了，现在每天订位都走线上，效率翻倍。」</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">🍜</div>
-          <div>
-            <p class="testimonial-name">陈老板</p>
-            <p class="testimonial-role">餐厅创业者</p>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <p class="testimonial-text">「我是做品牌设计的，之前想给客户做一个提案展示平台，但请不起开发。现在我自己就能搞，接单量直接涨了三成。」</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">🎨</div>
-          <div>
-            <p class="testimonial-name">林晓晴</p>
-            <p class="testimonial-role">独立品牌设计师</p>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <p class="testimonial-text">「做了 15 年销售，脑子里有一堆产品想法，一直缺一个能帮我把想法落地的工具。BuildAI 就是那个工具。」</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">💼</div>
-          <div>
-            <p class="testimonial-name">王强</p>
-            <p class="testimonial-role">连锁门店运营负责人</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="cta-box">
-      <h2>你的下一个想法，<br>今天就能上线</h2>
-      <p>加入数千名正在用 AI 构建产品的创业者。现在注册，永久免费套餐等你来用。</p>
-      <a href="#" class="btn-primary">立即免费开始 →</a>
     </div>
   </section>
 
   <footer>
-    <span class="footer-logo">BuildAI</span>
-    <p>© 2026 BuildAI · 让每个人都能做产品</p>
+    <span class="footer-name">Mama Rosa's Kitchen</span>
+    247 Elm Street, Springfield, IL &nbsp;·&nbsp; (555) 482-9301 &nbsp;·&nbsp; Open 7 days a week
+    <br>
+    © 1987–2026 Mama Rosa's Kitchen &nbsp;·&nbsp; Family owned &amp; operated since 1987
   </footer>
+
 </body>
 </html>
