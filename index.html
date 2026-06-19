@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mama Rosa's Kitchen — Italian-American Restaurant Since 1987</title>
+  <title>Rosa's Catering Co. — Corporate Catering &amp; Event Services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -157,18 +157,32 @@
       color: var(--text-dim);
       margin-bottom: 52px;
     }
-    .hero-hours {
-      display: inline-block;
-      background: rgba(255,255,255,0.02);
+    .hero-stats {
+      display: inline-flex;
+      gap: 0;
       border: 1px solid var(--dark-border);
-      padding: 16px 44px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: var(--text-dim);
-      line-height: 2.2;
       margin-bottom: 44px;
+    }
+    .hero-stat {
+      padding: 20px 40px;
+      border-right: 1px solid var(--dark-border);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
+      color: var(--text-dim);
+      line-height: 2;
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 1px;
+      line-height: 1.2;
+      margin-bottom: 4px;
     }
     .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn-gold {
@@ -242,7 +256,7 @@
       margin-top: 20px;
     }
 
-    /* ── Menu ── */
+    /* ── Packages ── */
     .menu-category { margin-bottom: 60px; }
     .menu-category h3 {
       font-family: 'Cormorant Garamond', serif;
@@ -360,7 +374,7 @@
       margin-top: 16px;
     }
 
-    /* ── Hours ── */
+    /* ── Contact / Quote ── */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -455,153 +469,150 @@
 <body>
 
   <header>
-    <a href="#" class="logo-text">Mama Rosa's <span>Kitchen</span></a>
+    <a href="#" class="logo-text">Rosa's <span>Catering Co.</span></a>
     <nav>
-      <a href="#menu">Menu</a>
-      <a href="#about">Our Story</a>
-      <a href="#hours">Hours</a>
-      <a href="#contact" class="btn-reserve">Reserve a Table</a>
+      <a href="#packages">Packages</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+      <a href="#quote" class="btn-reserve">Request a Quote</a>
     </nav>
   </header>
 
   <div class="notice-bar">
-    🍽️ &nbsp;<strong>Dine-In Only</strong>&nbsp; · &nbsp;No delivery or takeout at this time&nbsp; · &nbsp;Walk-ins welcome · Call ahead for parties of 6+
+    🏢 &nbsp;<strong>Corporate Accounts Welcome</strong>&nbsp; · &nbsp;Minimum 10 guests per order&nbsp; · &nbsp;Free consultation available · <a href="#quote">Get in touch today</a>
   </div>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-eyebrow">Italian-American Home Cooking · Springfield, IL</div>
-    <h1>Mama Rosa's Kitchen</h1>
-    <p class="hero-tagline">"Where every meal tastes like Sunday dinner"</p>
-    <p class="hero-years">Proudly serving our community since 1987 &mdash; 37 years of family recipes</p>
-    <div class="hero-hours">
-      Mon – Thu &nbsp; 11am – 9pm &nbsp;&nbsp;|&nbsp;&nbsp; Fri – Sat &nbsp; 11am – 10pm &nbsp;&nbsp;|&nbsp;&nbsp; Sun &nbsp; 12pm – 8pm
+    <div class="hero-eyebrow">B2B Catering · Corporate Events · Office Lunches</div>
+    <h1>Rosa's Catering Co.</h1>
+    <p class="hero-tagline">"Elevating your corporate dining experience"</p>
+    <p class="hero-years">Trusted by 200+ companies — delivering excellence since 2008</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>200+</strong>
+        Corporate clients
+      </div>
+      <div class="hero-stat">
+        <strong>15 yrs</strong>
+        Of expertise
+      </div>
+      <div class="hero-stat">
+        <strong>10–500</strong>
+        Guests per event
+      </div>
     </div>
     <div class="hero-cta">
-      <a href="#contact" class="btn-gold">Reserve a Table</a>
-      <a href="#menu" class="btn-outline-white">View Our Menu</a>
+      <a href="#quote" class="btn-gold">Request a Quote</a>
+      <a href="#packages" class="btn-outline-white">View Packages</a>
     </div>
   </section>
 
   <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
 
-  <!-- Menu -->
-  <section class="section" id="menu">
-    <h2 class="section-title">Our Menu</h2>
-    <p class="section-sub">Made fresh daily from Mama Rosa's original recipes. Ask your server about today's specials.</p>
+  <!-- Packages -->
+  <section class="section" id="packages">
+    <h2 class="section-title">Catering Packages</h2>
+    <p class="section-sub">All packages are fully customizable. Prices per person. Minimum 10 guests. Dietary options available on request.</p>
 
     <div class="menu-category">
-      <h3>Starters</h3>
+      <h3>Office Lunch Packages</h3>
       <div class="menu-grid">
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Garlic Bread</h4>
-            <p>Toasted with herb butter, served warm</p>
+            <h4>Essential Lunch Box</h4>
+            <p>Gourmet sandwich, seasonal side salad, dessert &amp; beverage</p>
           </div>
-          <span class="menu-price">$6.50</span>
+          <span class="menu-price">$18 / person</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Minestrone Soup</h4>
-            <p>Mama Rosa's daily recipe, cup or bowl</p>
+            <h4>Premium Buffet</h4>
+            <p>Hot entrée, 3 sides, salad bar, dessert station — fully staffed</p>
           </div>
-          <span class="menu-price">$7 / $11</span>
+          <span class="menu-price">$32 / person</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Caprese Salad</h4>
-            <p>Fresh mozzarella, tomato, basil, olive oil</p>
+            <h4>Executive Board Lunch</h4>
+            <p>3-course plated meal, professional service, beverages included</p>
           </div>
-          <span class="menu-price">$13</span>
+          <span class="menu-price">$48 / person</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Bruschetta</h4>
-            <p>Grilled bread with tomato, garlic, fresh basil</p>
+            <h4>Full-Day Conference</h4>
+            <p>Breakfast, working lunch &amp; afternoon break — all-inclusive service</p>
           </div>
-          <span class="menu-price">$9</span>
+          <span class="menu-price">$65 / person</span>
         </div>
       </div>
     </div>
 
     <div class="menu-category">
-      <h3>Pasta &amp; Mains</h3>
+      <h3>Corporate Event Packages</h3>
       <div class="menu-grid">
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Spaghetti &amp; Meatballs</h4>
-            <p>Hand-rolled beef meatballs, Sunday gravy</p>
+            <h4>Cocktail Reception</h4>
+            <p>Canapés, chef's stations, 2-hour service, full bar setup available</p>
           </div>
-          <span class="menu-price">$18</span>
+          <span class="menu-price">$45 / person</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Chicken Parmigiana</h4>
-            <p>Breaded chicken, marinara, melted mozzarella</p>
+            <h4>Gala Dinner</h4>
+            <p>4-course plated meal, sommelier selection, professional service team</p>
           </div>
-          <span class="menu-price">$22</span>
+          <span class="menu-price">$95 / person</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Fettuccine Alfredo</h4>
-            <p>Homemade pasta, butter cream sauce</p>
+            <h4>Team Building Lunch</h4>
+            <p>Interactive food stations, custom menu, casual atmosphere</p>
           </div>
-          <span class="menu-price">$17</span>
+          <span class="menu-price">$38 / person</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Eggplant Parmigiana</h4>
-            <p>Vegetarian. Layered with ricotta and marinara</p>
+            <h4>Holiday Party Package</h4>
+            <p>Full venue setup, themed décor, custom menu &amp; entertainment options</p>
           </div>
-          <span class="menu-price">$16</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Veal Marsala</h4>
-            <p>Pan-seared veal, mushrooms, Marsala wine sauce</p>
-          </div>
-          <span class="menu-price">$26</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Lasagna della Nonna</h4>
-            <p>Beef, ricotta, béchamel — Mama's signature dish</p>
-          </div>
-          <span class="menu-price">$20</span>
+          <span class="menu-price">On request</span>
         </div>
       </div>
     </div>
 
     <div class="menu-category">
-      <h3>Desserts</h3>
+      <h3>Add-On Services</h3>
       <div class="menu-grid">
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Tiramisu</h4>
-            <p>Made in-house every morning</p>
+            <h4>Dedicated Event Manager</h4>
+            <p>On-site coordination from setup to breakdown</p>
           </div>
-          <span class="menu-price">$9</span>
+          <span class="menu-price">$250 / event</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Cannoli</h4>
-            <p>Crispy shell, sweet ricotta, chocolate chips</p>
+            <h4>Premium Tableware</h4>
+            <p>Fine china, crystal glassware, linen tablecloths</p>
           </div>
-          <span class="menu-price">$8</span>
+          <span class="menu-price">$8 / person</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Panna Cotta</h4>
-            <p>Vanilla cream, seasonal berry compote</p>
+            <h4>Branded Presentation</h4>
+            <p>Custom menus, branded packaging &amp; signage for your event</p>
           </div>
-          <span class="menu-price">$8</span>
+          <span class="menu-price">$150 / event</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Gelato (2 scoops)</h4>
-            <p>Ask your server for today's flavors</p>
+            <h4>Weekly Office Subscription</h4>
+            <p>Recurring weekly lunches — save 15% vs one-off bookings</p>
           </div>
-          <span class="menu-price">$7</span>
+          <span class="menu-price">From $16 / person</span>
         </div>
       </div>
     </div>
@@ -610,49 +621,50 @@
   <!-- About -->
   <div class="about-bg" id="about">
     <div class="about-inner">
-      <div class="about-photo">🍝</div>
+      <div class="about-photo">🍽️</div>
       <div class="about-text">
-        <h2>Our Story</h2>
-        <p>In 1987, Rosa Marchetti opened a small kitchen on Elm Street with one goal: to share the food she grew up cooking in Naples with her new hometown. What started as a 12-table diner has grown into a beloved neighborhood staple — but the recipes haven't changed one bit.</p>
-        <p>Today, Rosa's daughter Maria and son-in-law Tony run the kitchen together, using the same handwritten recipe book Rosa brought from Italy. Every sauce is made from scratch. Every pasta is rolled by hand. Every dessert is baked on-site.</p>
-        <p>We don't do takeout. We don't do delivery. We believe good food deserves to be eaten at a table, with people you love.</p>
-        <div class="about-signature">— Mama Rosa &amp; Family</div>
+        <h2>About Us</h2>
+        <p>Rosa's Catering Co. was born from a simple belief: that great food transforms a meeting into a memory. Founded in 2008 by Rosa Marchetti, we started by catering a handful of local office lunches and quickly grew into the region's most trusted corporate caterer.</p>
+        <p>Today, our team of 30 culinary professionals serves over 200 corporate clients — from startups hosting their first all-hands to Fortune 500 companies running multi-day conferences. Every menu is crafted from scratch using seasonal, locally sourced ingredients.</p>
+        <p>We handle everything: consultation, menu planning, staffing, setup, and cleanup — so your team can focus entirely on what matters.</p>
+        <div class="about-signature">— Rosa Marchetti, Founder &amp; Executive Chef</div>
       </div>
     </div>
   </div>
 
-  <!-- Hours & Location -->
-  <section class="section" id="hours">
-    <h2 class="section-title">Hours &amp; Location</h2>
-    <p class="section-sub">Right in the heart of the neighborhood. Free parking available behind the building.</p>
+  <!-- Contact & Quote -->
+  <section class="section" id="contact">
+    <h2 class="section-title">Contact &amp; Quote</h2>
+    <p class="section-sub">We serve the greater metropolitan area. Free consultation for new corporate accounts. Same-day quotes available.</p>
     <div class="info-grid">
       <div class="info-box">
-        <h3>Opening Hours</h3>
+        <h3>Service Hours</h3>
         <table class="hours-table">
-          <tr><td>Monday – Thursday</td><td>11:00 am – 9:00 pm</td></tr>
-          <tr><td>Friday – Saturday</td><td>11:00 am – 10:00 pm</td></tr>
-          <tr><td>Sunday</td><td>12:00 pm – 8:00 pm</td></tr>
+          <tr><td>Monday – Friday</td><td>7:00 am – 8:00 pm</td></tr>
+          <tr><td>Saturday</td><td>8:00 am – 6:00 pm</td></tr>
+          <tr><td>Sunday</td><td>By appointment</td></tr>
         </table>
-        <div class="dine-only-badge">🍴 Dine-In Only &mdash; No delivery or takeout</div>
+        <div class="dine-only-badge">📋 Corporate Accounts · Minimum 10 Guests</div>
       </div>
-      <div class="info-box" id="contact">
-        <h3>Find Us &amp; Reservations</h3>
+      <div class="info-box" id="quote">
+        <h3>Get in Touch</h3>
         <div class="address-block">
-          <span class="phone">📞 (555) 482-9301</span>
-          247 Elm Street<br>
-          Springfield, IL 62701<br><br>
-          <strong style="color: var(--cream); font-weight: 400;">Reservations recommended on weekends.</strong><br>
-          Call ahead or stop by — we'll always try to fit you in.
+          <span class="phone">📞 (555) 847-2200</span>
+          Rosa's Catering Co.<br>
+          84 Commerce Drive, Suite 12<br>
+          Chicago, IL 60601<br><br>
+          <strong style="color: var(--cream); font-weight: 400;">Request a quote by phone or email.</strong><br>
+          We'll respond within 2 business hours.
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <span class="footer-name">Mama Rosa's Kitchen</span>
-    247 Elm Street, Springfield, IL &nbsp;·&nbsp; (555) 482-9301 &nbsp;·&nbsp; Open 7 days a week
+    <span class="footer-name">Rosa's Catering Co.</span>
+    84 Commerce Drive, Chicago, IL &nbsp;·&nbsp; (555) 847-2200 &nbsp;·&nbsp; Mon–Sat, 7am–8pm
     <br>
-    © 1987–2026 Mama Rosa's Kitchen &nbsp;·&nbsp; Family owned &amp; operated since 1987
+    © 2008–2026 Rosa's Catering Co. &nbsp;·&nbsp; B2B Corporate Catering &amp; Event Services
   </footer>
 
 </body>
