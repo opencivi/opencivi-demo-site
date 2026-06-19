@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mama Rosa's Kitchen — Italian-American Restaurant Since 1987</title>
+  <title>ローザ・ケータリング — 法人イベント・オフィスランチ専門</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -224,7 +224,7 @@
       letter-spacing: 0.3px;
     }
 
-    /* Menu */
+    /* Menu / Packages */
     .menu-category { margin-bottom: 56px; }
     .menu-category h3 {
       font-family: "Playfair Display", Georgia, serif;
@@ -276,6 +276,61 @@
       letter-spacing: 0.5px;
     }
 
+    /* Package highlight cards */
+    .package-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 52px;
+    }
+    @media(max-width: 700px) { .package-cards { grid-template-columns: 1fr; } }
+    .package-card {
+      background: rgba(201,168,76,0.04);
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 32px 28px;
+      text-align: center;
+    }
+    .package-card.featured {
+      border-color: #c9a84c;
+      background: rgba(201,168,76,0.08);
+    }
+    .package-card .pkg-label {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 10px;
+    }
+    .package-card h4 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: #f0ead8;
+      margin-bottom: 8px;
+    }
+    .package-card .pkg-price {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 32px;
+      color: #c9a84c;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+    .package-card .pkg-unit {
+      font-size: 13px;
+      color: #6e6050;
+      font-style: italic;
+      margin-bottom: 18px;
+    }
+    .package-card ul {
+      list-style: none;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 14px;
+      color: #8a7a68;
+      line-height: 2;
+    }
+    .package-card ul li::before { content: "· "; color: #c9a84c; }
+
     /* About */
     .about-bg {
       background: #0f0f0f;
@@ -325,7 +380,7 @@
       font-weight: 400;
     }
 
-    /* Hours */
+    /* Hours / Contact */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -408,153 +463,198 @@
 <body>
 
   <header>
-    <a href="#" class="logo-text">Mama Rosa's <span>Kitchen</span></a>
+    <a href="#" class="logo-text">ローザ・<span>ケータリング</span></a>
     <nav>
-      <a href="#menu">Menu</a>
-      <a href="#about">Our Story</a>
-      <a href="#hours">Hours</a>
-      <a href="#contact" class="btn-reserve">Reserve a Table</a>
+      <a href="#menu">パッケージ</a>
+      <a href="#about">会社概要</a>
+      <a href="#hours">営業案内</a>
+      <a href="#contact" class="btn-reserve">お見積もり依頼</a>
     </nav>
   </header>
 
   <div class="notice-bar">
-    🛵 &nbsp;<strong>UberEatsで注文できるようになりました！</strong>&nbsp; · &nbsp;<a href="#" style="color:inherit;text-decoration:underline;">今すぐ注文 →</a>
+    🏢 &nbsp;<strong>法人・団体専用ケータリングサービス</strong>&nbsp; · &nbsp;10名様より承ります&nbsp; · &nbsp;出張エリア：東京都内・神奈川・埼玉
   </div>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-eyebrow">Italian-American Home Cooking · Springfield, IL</div>
-    <h1>Mama Rosa's Kitchen</h1>
-    <p class="hero-tagline">"Where every meal tastes like Sunday dinner"</p>
-    <p class="hero-years">Proudly serving our community since 1987 &mdash; 37 years of family recipes</p>
+    <div class="hero-eyebrow">法人イベント · オフィスランチ · 企業パーティー専門</div>
+    <h1>ローザ・ケータリング</h1>
+    <p class="hero-tagline">「大切なビジネスの場に、最上のおもてなしを」</p>
+    <p class="hero-years">創業以来、500社以上の企業様にご利用いただいております</p>
     <div class="hero-hours">
-      Mon – Thu &nbsp; 11am – 9pm &nbsp;&nbsp;|&nbsp;&nbsp; Fri – Sat &nbsp; 11am – 10pm &nbsp;&nbsp;|&nbsp;&nbsp; Sun &nbsp; 12pm – 8pm
+      受付時間：平日 9:00 – 18:00 &nbsp;&nbsp;|&nbsp;&nbsp; 最短3日前より承ります &nbsp;&nbsp;|&nbsp;&nbsp; 10名〜500名まで対応
     </div>
     <div class="hero-cta">
-      <a href="#contact" class="btn-gold">Reserve a Table</a>
-      <a href="#menu" class="btn-outline-white">View Our Menu</a>
+      <a href="#contact" class="btn-gold">無料お見積もり依頼</a>
+      <a href="#menu" class="btn-outline-white">パッケージを見る</a>
     </div>
   </section>
 
   <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
 
-  <!-- Menu -->
+  <!-- Menu / Packages -->
   <section class="section" id="menu">
-    <h2 class="section-title">Our Menu</h2>
-    <p class="section-sub">Made fresh daily from Mama Rosa's original recipes. Ask your server about today's specials.</p>
+    <h2 class="section-title">イベントパッケージ</h2>
+    <p class="section-sub">すべてのパッケージは人数・ご予算に合わせてカスタマイズ可能です。専任スタッフがご担当します。</p>
+
+    <!-- Package highlight cards -->
+    <div class="package-cards">
+      <div class="package-card">
+        <div class="pkg-label">スタンダード</div>
+        <h4>オフィスランチ</h4>
+        <div class="pkg-price">¥1,800</div>
+        <div class="pkg-unit">/ お一人様（税別）</div>
+        <ul>
+          <li>メイン料理 2種</li>
+          <li>サラダ・副菜 2種</li>
+          <li>パン・ライス</li>
+          <li>ソフトドリンク</li>
+          <li>使い捨て食器・カトラリー</li>
+        </ul>
+      </div>
+      <div class="package-card featured">
+        <div class="pkg-label">人気No.1</div>
+        <h4>ビジネスイベント</h4>
+        <div class="pkg-price">¥3,500</div>
+        <div class="pkg-unit">/ お一人様（税別）</div>
+        <ul>
+          <li>前菜・スープ</li>
+          <li>メイン料理 3種</li>
+          <li>サラダ・副菜 3種</li>
+          <li>デザート</li>
+          <li>アルコール・ソフトドリンク</li>
+          <li>専任スタッフ1名常駐</li>
+        </ul>
+      </div>
+      <div class="package-card">
+        <div class="pkg-label">プレミアム</div>
+        <h4>重要会食・式典</h4>
+        <div class="pkg-price">¥6,500</div>
+        <div class="pkg-unit">/ お一人様（税別）</div>
+        <ul>
+          <li>フルコース全7品</li>
+          <li>厳選食材・シェフ監修</li>
+          <li>テーブルコーディネート</li>
+          <li>ソムリエ・ウェイタースタッフ</li>
+          <li>搬入・撤収・後片付け込み</li>
+          <li>アレルギー対応フル対応</li>
+        </ul>
+      </div>
+    </div>
 
     <div class="menu-category">
-      <h3>Starters</h3>
+      <h3>オフィスランチ・ミーティング向け</h3>
       <div class="menu-grid">
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Garlic Bread</h4>
-            <p>Toasted with herb butter, served warm</p>
+            <h4>ボックスランチセット</h4>
+            <p>個人BOX仕様、社内会議・研修に最適</p>
           </div>
-          <span class="menu-price">$6.50</span>
+          <span class="menu-price">¥1,200〜</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Minestrone Soup</h4>
-            <p>Mama Rosa's daily recipe, cup or bowl</p>
+            <h4>ビュッフェランチ</h4>
+            <p>立食形式、20名以上より受付</p>
           </div>
-          <span class="menu-price">$7 / $11</span>
+          <span class="menu-price">¥1,800〜</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Caprese Salad</h4>
-            <p>Fresh mozzarella, tomato, basil, olive oil</p>
+            <h4>軽食・スナックセット</h4>
+            <p>午後の会議、セミナー休憩に</p>
           </div>
-          <span class="menu-price">$13</span>
+          <span class="menu-price">¥600〜</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Bruschetta</h4>
-            <p>Grilled bread with tomato, garlic, fresh basil</p>
+            <h4>サンドイッチ＆ドリンクセット</h4>
+            <p>短時間ランチ・朝食ミーティングに</p>
           </div>
-          <span class="menu-price">$9</span>
+          <span class="menu-price">¥900〜</span>
         </div>
       </div>
     </div>
 
     <div class="menu-category">
-      <h3>Pasta &amp; Mains</h3>
+      <h3>法人イベント・パーティー向け</h3>
       <div class="menu-grid">
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Spaghetti &amp; Meatballs</h4>
-            <p>Hand-rolled beef meatballs, Sunday gravy</p>
+            <h4>社内懇親会パッケージ</h4>
+            <p>立食・着席どちらにも対応</p>
           </div>
-          <span class="menu-price">$18</span>
+          <span class="menu-price">¥2,800〜</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Chicken Parmigiana</h4>
-            <p>Breaded chicken, marinara, melted mozzarella</p>
+            <h4>新年会・忘年会プラン</h4>
+            <p>アルコール込み、スタッフ常駐</p>
           </div>
-          <span class="menu-price">$22</span>
+          <span class="menu-price">¥4,200〜</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Fettuccine Alfredo</h4>
-            <p>Homemade pasta, butter cream sauce</p>
+            <h4>展示会・カンファレンス</h4>
+            <p>大規模対応100〜500名、分割提供可</p>
           </div>
-          <span class="menu-price">$17</span>
+          <span class="menu-price">¥2,200〜</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Eggplant Parmigiana</h4>
-            <p>Vegetarian. Layered with ricotta and marinara</p>
+            <h4>VIP接待・重役会食</h4>
+            <p>シェフ派遣、テーブルサービス付き</p>
           </div>
-          <span class="menu-price">$16</span>
+          <span class="menu-price">¥6,500〜</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Veal Marsala</h4>
-            <p>Pan-seared veal, mushrooms, Marsala wine sauce</p>
+            <h4>内定者懇談会プラン</h4>
+            <p>採用イベント向け、若手に人気のメニュー</p>
           </div>
-          <span class="menu-price">$26</span>
+          <span class="menu-price">¥2,000〜</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Lasagna della Nonna</h4>
-            <p>Beef, ricotta, béchamel — Mama's signature dish</p>
+            <h4>周年記念パーティー</h4>
+            <p>記念品手配・会場装飾オプションあり</p>
           </div>
-          <span class="menu-price">$20</span>
+          <span class="menu-price">¥5,000〜</span>
         </div>
       </div>
     </div>
 
     <div class="menu-category">
-      <h3>Desserts</h3>
+      <h3>オプション・追加サービス</h3>
       <div class="menu-grid">
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Tiramisu</h4>
-            <p>Made in-house every morning</p>
+            <h4>専任スタッフ派遣</h4>
+            <p>3時間単位でご手配</p>
           </div>
-          <span class="menu-price">$9</span>
+          <span class="menu-price">¥15,000〜</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Cannoli</h4>
-            <p>Crispy shell, sweet ricotta, chocolate chips</p>
+            <h4>テーブルコーディネート</h4>
+            <p>食器・装花・クロス一式</p>
           </div>
-          <span class="menu-price">$8</span>
+          <span class="menu-price">¥8,000〜</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Panna Cotta</h4>
-            <p>Vanilla cream, seasonal berry compote</p>
+            <h4>アレルギー対応メニュー</h4>
+            <p>グルテンフリー・ハラール等</p>
           </div>
-          <span class="menu-price">$8</span>
+          <span class="menu-price">無料対応</span>
         </div>
         <div class="menu-item">
           <div class="menu-item-info">
-            <h4>Gelato (2 scoops)</h4>
-            <p>Ask your server for today's flavors</p>
+            <h4>後片付け・搬出サービス</h4>
+            <p>終了後の清掃・撤収も一括対応</p>
           </div>
-          <span class="menu-price">$7</span>
+          <span class="menu-price">¥5,000〜</span>
         </div>
       </div>
     </div>
@@ -563,49 +663,50 @@
   <!-- About -->
   <div class="about-bg" id="about">
     <div class="about-inner">
-      <div class="about-photo">🍝</div>
+      <div class="about-photo">🍽️</div>
       <div class="about-text">
-        <h2>Our Story</h2>
-        <p>In 1987, Rosa Marchetti opened a small kitchen on Elm Street with one goal: to share the food she grew up cooking in Naples with her new hometown. What started as a 12-table diner has grown into a beloved neighborhood staple — but the recipes haven't changed one bit.</p>
-        <p>Today, Rosa's daughter Maria and son-in-law Tony run the kitchen together, using the same handwritten recipe book Rosa brought from Italy. Every sauce is made from scratch. Every pasta is rolled by hand. Every dessert is baked on-site.</p>
-        <p>We don't do takeout. We don't do delivery. We believe good food deserves to be eaten at a table, with people you love.</p>
-        <div class="about-signature">— Mama Rosa &amp; Family</div>
+        <h2>会社概要</h2>
+        <p>ローザ・ケータリングは、2005年の創業以来、東京都内を中心に法人様専門のケータリングサービスを提供してまいりました。外資系企業の重要会食から中小企業の社内ランチまで、幅広い規模と目的に対応できる専門チームを擁しています。</p>
+        <p>代表シェフのローザが厳選した食材と、長年培ったサービスノウハウを組み合わせ、「食事の場がビジネスを動かす」という信念のもと、500社以上の企業様との長期的なパートナーシップを築いてきました。</p>
+        <p>専任コーディネーターが初回ご相談から当日のサービス終了まで一貫してご担当。お客様のご要望・予算・スケジュールに最適なプランをご提案します。</p>
+        <div class="about-signature">— ローザ・ケータリング 代表 Rosa Marchetti</div>
       </div>
     </div>
   </div>
 
-  <!-- Hours & Location -->
+  <!-- Business Hours & Contact -->
   <section class="section" id="hours">
-    <h2 class="section-title">Hours &amp; Location</h2>
-    <p class="section-sub">Right in the heart of the neighborhood. Free parking available behind the building.</p>
+    <h2 class="section-title">営業案内・お問い合わせ</h2>
+    <p class="section-sub">まずはお気軽にご連絡ください。専任コーディネーターが詳細をお伺いします。</p>
     <div class="info-grid">
       <div class="info-box">
-        <h3>Opening Hours</h3>
+        <h3>受付時間・対応エリア</h3>
         <table class="hours-table">
-          <tr><td>Monday – Thursday</td><td>11:00 am – 9:00 pm</td></tr>
-          <tr><td>Friday – Saturday</td><td>11:00 am – 10:00 pm</td></tr>
-          <tr><td>Sunday</td><td>12:00 pm – 8:00 pm</td></tr>
+          <tr><td>月曜日 – 金曜日</td><td>9:00 – 18:00</td></tr>
+          <tr><td>土曜日</td><td>10:00 – 15:00（要予約）</td></tr>
+          <tr><td>日曜日・祝日</td><td>休業</td></tr>
         </table>
-        <div class="dine-only-badge">🍴 Dine-In Only &mdash; No delivery or takeout</div>
+        <div class="dine-only-badge">📍 対応エリア：東京都内・神奈川・埼玉（要相談）</div>
       </div>
       <div class="info-box" id="contact">
-        <h3>Find Us &amp; Reservations</h3>
+        <h3>お見積もり・ご相談</h3>
         <div class="address-block">
-          <span class="phone">📞 (555) 482-9301</span>
-          247 Elm Street<br>
-          Springfield, IL 62701<br><br>
-          <strong>Reservations recommended on weekends.</strong><br>
-          Call ahead or stop by — we'll always try to fit you in.
+          <span class="phone">📞 03-1234-5678</span>
+          〒105-0011 東京都港区芝公園2-1-X<br>
+          ローザ・ケータリングビル 3F<br><br>
+          <strong>お見積もりは無料・最短当日回答。</strong><br>
+          メール：info@rosa-catering.co.jp<br>
+          ご利用予定日の3営業日前までにご連絡ください。
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <span class="footer-name">Mama Rosa's Kitchen</span>
-    247 Elm Street, Springfield, IL &nbsp;·&nbsp; (555) 482-9301 &nbsp;·&nbsp; Open 7 days a week
+    <span class="footer-name">ローザ・ケータリング</span>
+    〒105-0011 東京都港区芝公園2-1-X &nbsp;·&nbsp; 03-1234-5678 &nbsp;·&nbsp; 平日 9:00–18:00
     <br>
-    © 1987–2026 Mama Rosa's Kitchen &nbsp;·&nbsp; Family owned &amp; operated since 1987
+    © 2005–2026 ローザ・ケータリング株式会社 &nbsp;·&nbsp; 法人専門ケータリングサービス
   </footer>
 
 </body>
