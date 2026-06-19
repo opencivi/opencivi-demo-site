@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mama Rosa's Kitchen — Italian-American Restaurant Since 1987</title>
+  <title>Rosa's Catering Co. — Restauration d'entreprise depuis 2008</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -135,19 +135,24 @@
       letter-spacing: 2px;
       text-transform: uppercase;
     }
-    .hero-hours {
-      display: inline-block;
-      background: rgba(201, 168, 76, 0.05);
+    .hero-badges {
+      display: inline-flex;
+      gap: 0;
       border: 1px solid rgba(201, 168, 76, 0.25);
-      padding: 16px 44px;
-      font-size: 13px;
+      background: rgba(201, 168, 76, 0.04);
+      margin-bottom: 44px;
+    }
+    .hero-badge {
+      padding: 14px 28px;
+      font-size: 11px;
       color: #a89880;
       font-family: 'Montserrat', Arial, sans-serif;
       font-weight: 300;
-      line-height: 2.2;
-      margin-bottom: 44px;
       letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-right: 1px solid rgba(201, 168, 76, 0.2);
     }
+    .hero-badge:last-child { border-right: none; }
     .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn-gold {
       background: #c9a84c;
@@ -212,55 +217,104 @@
       letter-spacing: 1px;
     }
 
-    /* Menu */
-    .menu-category { margin-bottom: 58px; }
-    .menu-category h3 {
+    /* Packages */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    @media(max-width: 680px) { .packages-grid { grid-template-columns: 1fr; } }
+    .package-card {
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 36px 32px;
+      background: rgba(201, 168, 76, 0.02);
+      position: relative;
+    }
+    .package-card.featured {
+      border-color: rgba(201, 168, 76, 0.5);
+      background: rgba(201, 168, 76, 0.05);
+    }
+    .package-badge {
+      position: absolute;
+      top: -1px;
+      right: 24px;
+      background: #c9a84c;
+      color: #0d0d0d;
+      font-size: 9px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+    }
+    .package-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .package-name {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 22px;
       font-weight: 400;
-      font-style: italic;
-      color: #c9a84c;
-      border-left: 2px solid #c9a84c;
-      padding-left: 16px;
-      margin-bottom: 24px;
+      color: #e8dcc8;
+      margin-bottom: 6px;
       letter-spacing: 0.5px;
     }
-    .menu-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 52px;
-    }
-    @media(max-width: 600px) { .menu-grid { grid-template-columns: 1fr; } }
-    .menu-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(201, 168, 76, 0.1);
-      gap: 20px;
-    }
-    .menu-item-info h4 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 16px;
-      font-weight: 500;
-      color: #e0d4bc;
-      margin-bottom: 4px;
-      letter-spacing: 0.3px;
-    }
-    .menu-item-info p {
-      font-size: 13px;
-      color: #5e5244;
+    .package-subtitle {
+      font-size: 11px;
       font-family: 'Montserrat', Arial, sans-serif;
       font-weight: 300;
-      letter-spacing: 0.5px;
-    }
-    .menu-price {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 16px;
-      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       color: #c9a84c;
-      white-space: nowrap;
-      padding-top: 2px;
+      margin-bottom: 20px;
+    }
+    .package-desc {
+      font-size: 13px;
+      color: #6a5e4a;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 300;
+      line-height: 2;
+      margin-bottom: 24px;
+      letter-spacing: 0.3px;
+    }
+    .package-includes {
+      margin-bottom: 28px;
+      list-style: none;
+    }
+    .package-includes li {
+      font-size: 12px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 300;
+      color: #7a6e5c;
+      letter-spacing: 0.5px;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.07);
+    }
+    .package-includes li::before {
+      content: '✓ ';
+      color: #c9a84c;
+      font-weight: 500;
+    }
+    .package-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
+      padding-top: 18px;
+    }
+    .package-price {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 28px;
+      color: #c9a84c;
+      font-weight: 400;
+    }
+    .package-price-note {
+      font-size: 11px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 300;
+      color: #4a4034;
+      letter-spacing: 1px;
     }
 
     /* About */
@@ -313,8 +367,34 @@
       margin-top: 14px;
       letter-spacing: 0.5px;
     }
+    .about-stats {
+      display: flex;
+      gap: 36px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .about-stat {
+      text-align: center;
+    }
+    .about-stat-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 36px;
+      color: #c9a84c;
+      display: block;
+      line-height: 1;
+    }
+    .about-stat-label {
+      font-size: 10px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4a4034;
+      margin-top: 6px;
+      display: block;
+    }
 
-    /* Hours */
+    /* Service info */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -360,7 +440,7 @@
       margin-bottom: 18px;
       letter-spacing: 1px;
     }
-    .dine-only-badge {
+    .service-badge {
       display: inline-block;
       margin-top: 22px;
       background: transparent;
@@ -403,204 +483,185 @@
 <body>
 
   <header>
-    <a href="#" class="logo-text">Mama Rosa's <span>Kitchen</span></a>
+    <a href="#" class="logo-text">Rosa's <span>Catering Co.</span></a>
     <nav>
-      <a href="#menu">Menu</a>
-      <a href="#about">Our Story</a>
-      <a href="#hours">Hours</a>
-      <a href="#contact" class="btn-reserve">Reserve a Table</a>
+      <a href="#packages">Formules</a>
+      <a href="#about">Notre Histoire</a>
+      <a href="#contact">Zone de Service</a>
+      <a href="#devis" class="btn-reserve">Demander un Devis</a>
     </nav>
   </header>
 
   <div class="notice-bar">
-    🍽️ &nbsp;<strong>Dine-In Only</strong>&nbsp; · &nbsp;No delivery or takeout at this time&nbsp; · &nbsp;Walk-ins welcome · Call ahead for parties of 6+
+    🏢 &nbsp;<strong>Restauration d'entreprise</strong>&nbsp; · &nbsp;Livraison sur site incluse pour tout événement de 20 personnes ou plus&nbsp; · &nbsp;Devis sous 24h
   </div>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-eyebrow">Italian-American Home Cooking · Springfield, IL</div>
-    <h1>Mama Rosa's Kitchen</h1>
-    <p class="hero-tagline">"Where every meal tastes like Sunday dinner"</p>
-    <p class="hero-years">Proudly serving our community since 1987 &mdash; 37 years of family recipes</p>
-    <div class="hero-hours">
-      Mon – Thu &nbsp; 11am – 9pm &nbsp;&nbsp;|&nbsp;&nbsp; Fri – Sat &nbsp; 11am – 10pm &nbsp;&nbsp;|&nbsp;&nbsp; Sun &nbsp; 12pm – 8pm
+    <div class="hero-eyebrow">Traiteur B2B · Événements Corporatifs · Déjeuners d'équipe</div>
+    <h1>Rosa's Catering Co.</h1>
+    <p class="hero-tagline">"Des repas d'exception pour vos équipes et vos clients"</p>
+    <p class="hero-years">Partenaire de confiance des entreprises depuis 2008 — plus de 5 000 événements réalisés</p>
+    <div class="hero-badges">
+      <div class="hero-badge">Livraison sur site</div>
+      <div class="hero-badge">Devis personnalisé</div>
+      <div class="hero-badge">À partir de 10 personnes</div>
+      <div class="hero-badge">Régimes spéciaux pris en charge</div>
     </div>
     <div class="hero-cta">
-      <a href="#contact" class="btn-gold">Reserve a Table</a>
-      <a href="#menu" class="btn-outline-white">View Our Menu</a>
+      <a href="#devis" class="btn-gold">Demander un Devis</a>
+      <a href="#packages" class="btn-outline-white">Voir nos Formules</a>
     </div>
   </section>
 
   <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
 
-  <!-- Menu -->
-  <section class="section" id="menu">
-    <h2 class="section-title">Our Menu</h2>
-    <p class="section-sub">Made fresh daily from Mama Rosa's original recipes. Ask your server about today's specials.</p>
+  <!-- Packages -->
+  <section class="section" id="packages">
+    <h2 class="section-title">Nos Formules</h2>
+    <p class="section-sub">Des solutions clé en main adaptées à chaque type d'événement d'entreprise. Tous les prix s'entendent par personne, livraison et service inclus.</p>
 
-    <div class="menu-category">
-      <h3>Starters</h3>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Garlic Bread</h4>
-            <p>Toasted with herb butter, served warm</p>
-          </div>
-          <span class="menu-price">$6.50</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Minestrone Soup</h4>
-            <p>Mama Rosa's daily recipe, cup or bowl</p>
-          </div>
-          <span class="menu-price">$7 / $11</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Caprese Salad</h4>
-            <p>Fresh mozzarella, tomato, basil, olive oil</p>
-          </div>
-          <span class="menu-price">$13</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Bruschetta</h4>
-            <p>Grilled bread with tomato, garlic, fresh basil</p>
-          </div>
-          <span class="menu-price">$9</span>
+    <div class="packages-grid">
+
+      <div class="package-card">
+        <span class="package-icon">☕</span>
+        <div class="package-name">Pause Déjeuner Express</div>
+        <div class="package-subtitle">Déjeuner d'équipe</div>
+        <p class="package-desc">La solution idéale pour les déjeuners de bureau quotidiens. Livraison ponctuelle, mise en place soignée, vaisselle recyclable.</p>
+        <ul class="package-includes">
+          <li>Buffet froid ou chaud au choix</li>
+          <li>Entrée + Plat principal + Dessert</li>
+          <li>Boissons (eau, jus, café)</li>
+          <li>Couverts et serviettes inclus</li>
+          <li>Livraison et récupération du matériel</li>
+        </ul>
+        <div class="package-price-row">
+          <span class="package-price">18 €</span>
+          <span class="package-price-note">/ personne · min. 10 pers.</span>
         </div>
       </div>
-    </div>
 
-    <div class="menu-category">
-      <h3>Pasta &amp; Mains</h3>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Spaghetti &amp; Meatballs</h4>
-            <p>Hand-rolled beef meatballs, Sunday gravy</p>
-          </div>
-          <span class="menu-price">$18</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Chicken Parmigiana</h4>
-            <p>Breaded chicken, marinara, melted mozzarella</p>
-          </div>
-          <span class="menu-price">$22</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Fettuccine Alfredo</h4>
-            <p>Homemade pasta, butter cream sauce</p>
-          </div>
-          <span class="menu-price">$17</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Eggplant Parmigiana</h4>
-            <p>Vegetarian. Layered with ricotta and marinara</p>
-          </div>
-          <span class="menu-price">$16</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Veal Marsala</h4>
-            <p>Pan-seared veal, mushrooms, Marsala wine sauce</p>
-          </div>
-          <span class="menu-price">$26</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Lasagna della Nonna</h4>
-            <p>Beef, ricotta, béchamel — Mama's signature dish</p>
-          </div>
-          <span class="menu-price">$20</span>
+      <div class="package-card featured">
+        <div class="package-badge">Le plus populaire</div>
+        <span class="package-icon">🍽️</span>
+        <div class="package-name">Réunion Prestige</div>
+        <div class="package-subtitle">Événement client · Séminaire</div>
+        <p class="package-desc">Parfait pour impressionner vos clients ou marquer vos réunions stratégiques. Présentation gastronomique et service attentionné.</p>
+        <ul class="package-includes">
+          <li>Accueil café &amp; viennoiseries</li>
+          <li>Buffet gastronomique 3 services</li>
+          <li>Sélection de mignardises et desserts</li>
+          <li>Service traiteur sur place</li>
+          <li>Vaisselle porcelaine et verrerie</li>
+          <li>Décoration de table incluse</li>
+        </ul>
+        <div class="package-price-row">
+          <span class="package-price">38 €</span>
+          <span class="package-price-note">/ personne · min. 20 pers.</span>
         </div>
       </div>
-    </div>
 
-    <div class="menu-category">
-      <h3>Desserts</h3>
-      <div class="menu-grid">
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Tiramisu</h4>
-            <p>Made in-house every morning</p>
-          </div>
-          <span class="menu-price">$9</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Cannoli</h4>
-            <p>Crispy shell, sweet ricotta, chocolate chips</p>
-          </div>
-          <span class="menu-price">$8</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Panna Cotta</h4>
-            <p>Vanilla cream, seasonal berry compote</p>
-          </div>
-          <span class="menu-price">$8</span>
-        </div>
-        <div class="menu-item">
-          <div class="menu-item-info">
-            <h4>Gelato (2 scoops)</h4>
-            <p>Ask your server for today's flavors</p>
-          </div>
-          <span class="menu-price">$7</span>
+      <div class="package-card">
+        <span class="package-icon">🥂</span>
+        <div class="package-name">Cocktail d'Entreprise</div>
+        <div class="package-subtitle">Soirée · Lancement · Gala</div>
+        <p class="package-desc">Pour vos soirées d'entreprise, lancements de produits ou galas annuels. Ambiance raffinée, bouchées élaborées et service en salle.</p>
+        <ul class="package-includes">
+          <li>Canapés et amuse-bouches variés (20 pièces/pers.)</li>
+          <li>Buffet de fromages et charcuteries</li>
+          <li>Bar à desserts</li>
+          <li>Personnel de service dédié</li>
+          <li>Matériel de réception fourni</li>
+        </ul>
+        <div class="package-price-row">
+          <span class="package-price">55 €</span>
+          <span class="package-price-note">/ personne · min. 30 pers.</span>
         </div>
       </div>
+
+      <div class="package-card">
+        <span class="package-icon">📋</span>
+        <div class="package-name">Contrat Mensuel Bureau</div>
+        <div class="package-subtitle">Abonnement · Récurrent</div>
+        <p class="package-desc">Solution d'abonnement pour les entreprises souhaitant proposer un déjeuner régulier à leurs équipes. Tarif préférentiel et menu renouvelé chaque semaine.</p>
+        <ul class="package-includes">
+          <li>Menu hebdomadaire renouvelé</li>
+          <li>Options végétariennes et sans gluten</li>
+          <li>Livraison planifiée sur le calendrier de votre choix</li>
+          <li>Gestionnaire de compte dédié</li>
+          <li>Facturation mensuelle simplifiée</li>
+        </ul>
+        <div class="package-price-row">
+          <span class="package-price">14 €</span>
+          <span class="package-price-note">/ personne · engagement 3 mois</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- About -->
   <div class="about-bg" id="about">
     <div class="about-inner">
-      <div class="about-photo">🍝</div>
+      <div class="about-photo">🍱</div>
       <div class="about-text">
-        <h2>Our Story</h2>
-        <p>In 1987, Rosa Marchetti opened a small kitchen on Elm Street with one goal: to share the food she grew up cooking in Naples with her new hometown. What started as a 12-table diner has grown into a beloved neighborhood staple — but the recipes haven't changed one bit.</p>
-        <p>Today, Rosa's daughter Maria and son-in-law Tony run the kitchen together, using the same handwritten recipe book Rosa brought from Italy. Every sauce is made from scratch. Every pasta is rolled by hand. Every dessert is baked on-site.</p>
-        <p>We don't do takeout. We don't do delivery. We believe good food deserves to be eaten at a table, with people you love.</p>
-        <div class="about-signature">— Mama Rosa &amp; Family</div>
+        <h2>Notre Histoire</h2>
+        <p>Rosa's Catering Co. est née en 2008 de la passion de Rosa Delacroix pour la gastronomie et d'une conviction simple : les équipes qui mangent bien travaillent mieux. Ce qui a commencé comme un service de déjeuner pour trois startups parisiennes est devenu l'un des traiteurs d'entreprise les plus demandés de la région.</p>
+        <p>Aujourd'hui, notre brigade de 18 chefs et coordinateurs d'événements gère plus de 400 prestations par an, des petits déjeuners d'équipe aux galas de 300 convives. Chaque menu est conçu sur mesure, chaque ingrédient est sélectionné avec soin chez nos producteurs locaux partenaires.</p>
+        <p>Nous sommes convaincus que la qualité de la restauration reflète l'image de votre entreprise. C'est pourquoi nous ne faisons aucun compromis sur la fraîcheur, la présentation et le service.</p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="about-stat-num">5 000+</span>
+            <span class="about-stat-label">Événements réalisés</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-num">320</span>
+            <span class="about-stat-label">Clients entreprises</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat-num">16</span>
+            <span class="about-stat-label">Années d'expertise</span>
+          </div>
+        </div>
+        <div class="about-signature">— Rosa Delacroix, Fondatrice</div>
       </div>
     </div>
   </div>
 
-  <!-- Hours & Location -->
-  <section class="section" id="hours">
-    <h2 class="section-title">Hours &amp; Location</h2>
-    <p class="section-sub">Right in the heart of the neighborhood. Free parking available behind the building.</p>
+  <!-- Zone de service & Contact -->
+  <section class="section" id="contact">
+    <h2 class="section-title">Zone de Service &amp; Contact</h2>
+    <p class="section-sub">Nous intervenons dans toute l'Île-de-France et ses alentours. Contactez-nous pour les prestations hors région.</p>
     <div class="info-grid">
       <div class="info-box">
-        <h3>Opening Hours</h3>
+        <h3>Horaires de Service</h3>
         <table class="hours-table">
-          <tr><td>Monday – Thursday</td><td>11:00 am – 9:00 pm</td></tr>
-          <tr><td>Friday – Saturday</td><td>11:00 am – 10:00 pm</td></tr>
-          <tr><td>Sunday</td><td>12:00 pm – 8:00 pm</td></tr>
+          <tr><td>Lundi – Vendredi</td><td>7:00 – 20:00</td></tr>
+          <tr><td>Samedi</td><td>9:00 – 18:00</td></tr>
+          <tr><td>Dimanche &amp; Jours fériés</td><td>Sur demande</td></tr>
         </table>
-        <div class="dine-only-badge">🍴 Dine-In Only &mdash; No delivery or takeout</div>
+        <div class="service-badge">🚚 Livraison offerte dès 20 personnes</div>
       </div>
-      <div class="info-box" id="contact">
-        <h3>Find Us &amp; Reservations</h3>
+      <div class="info-box" id="devis">
+        <h3>Demander un Devis</h3>
         <div class="address-block">
-          <span class="phone">📞 (555) 482-9301</span>
-          247 Elm Street<br>
-          Springfield, IL 62701<br><br>
-          <strong>Reservations recommended on weekends.</strong><br>
-          Call ahead or stop by — we'll always try to fit you in.
+          <span class="phone">📞 01 42 86 33 90</span>
+          Rosa's Catering Co.<br>
+          14 rue des Entrepreneurs<br>
+          75015 Paris, France<br><br>
+          <strong>Réponse sous 24h ouvrées.</strong><br>
+          Envoyez-nous votre date, le nombre de convives<br>
+          et le type d'événement — nous gérons le reste.
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <span class="footer-name">Mama Rosa's Kitchen</span>
-    247 Elm Street, Springfield, IL &nbsp;·&nbsp; (555) 482-9301 &nbsp;·&nbsp; Open 7 days a week
+    <span class="footer-name">Rosa's Catering Co.</span>
+    14 rue des Entrepreneurs, 75015 Paris &nbsp;·&nbsp; 01 42 86 33 90 &nbsp;·&nbsp; contact@rosas-catering.fr
     <br>
-    © 1987–2026 Mama Rosa's Kitchen &nbsp;·&nbsp; Family owned &amp; operated since 1987
+    © 2008–2026 Rosa's Catering Co. &nbsp;·&nbsp; Traiteur d'entreprise agréé · SIRET 482 961 305 00018
   </footer>
 
 </body>
