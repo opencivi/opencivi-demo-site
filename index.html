@@ -4,52 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mama Rosa's Kitchen — Italian-American Restaurant Since 1987</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #fdf8f0;
-      color: #2c1a0e;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      background: #0d0d0d;
+      color: #e8dcc8;
       line-height: 1.6;
     }
 
     /* Header */
     header {
-      background: #6b1515;
+      background: #0d0d0d;
       padding: 0 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 72px;
-      border-bottom: 4px solid #daa520;
+      border-bottom: 1px solid rgba(201,168,76,0.25);
       position: sticky;
       top: 0;
       z-index: 100;
     }
     .logo-text {
+      font-family: 'Playfair Display', serif;
       font-size: 22px;
-      font-weight: bold;
-      color: #fff;
+      font-weight: 600;
+      color: #e8dcc8;
       text-decoration: none;
-      letter-spacing: 0.3px;
+      letter-spacing: 1px;
     }
-    .logo-text span { color: #daa520; }
+    .logo-text span { color: #c9a84c; }
     nav { display: flex; gap: 28px; align-items: center; }
     nav a {
-      color: #f5e6c8;
+      color: #8a7a60;
       text-decoration: none;
-      font-size: 14px;
-      font-family: Arial, sans-serif;
-      transition: color 0.15s;
+      font-size: 10px;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      transition: color 0.2s;
     }
-    nav a:hover { color: #daa520; }
+    nav a:hover { color: #c9a84c; }
     .btn-reserve {
-      background: #daa520;
-      color: #fff !important;
+      background: transparent;
+      color: #c9a84c !important;
       padding: 8px 18px;
-      border-radius: 3px;
-      font-weight: bold;
-      font-family: Arial, sans-serif;
+      border: 1px solid #c9a84c;
+      font-weight: 400;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 10px !important;
+      transition: all 0.2s;
+    }
+    .btn-reserve:hover {
+      background: #c9a84c;
+      color: #0d0d0d !important;
     }
     .lang-switcher {
       display: flex;
@@ -58,292 +72,332 @@
     }
     .lang-btn {
       background: transparent;
-      border: 1px solid rgba(245,230,200,0.45);
-      color: #c4a882;
+      border: 1px solid rgba(201,168,76,0.25);
+      color: #8a7a60;
       padding: 3px 8px;
-      border-radius: 3px;
-      font-size: 11px;
-      font-family: Arial, sans-serif;
+      border-radius: 0;
+      font-size: 10px;
+      font-family: 'Montserrat', sans-serif;
       cursor: pointer;
-      transition: all 0.15s;
+      letter-spacing: 1px;
+      transition: all 0.2s;
     }
     .lang-btn:hover, .lang-btn.active {
-      background: rgba(218,165,32,0.25);
-      border-color: #daa520;
-      color: #daa520;
+      background: rgba(201,168,76,0.08);
+      border-color: #c9a84c;
+      color: #c9a84c;
     }
 
     /* Notice bar */
     .notice-bar {
-      background: #fff8e1;
-      border-bottom: 1px solid #e6c47a;
-      padding: 9px 40px;
+      background: #111111;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 10px 40px;
       text-align: center;
-      font-size: 13px;
-      font-family: Arial, sans-serif;
-      color: #5a4000;
+      font-size: 11px;
+      font-family: 'Montserrat', sans-serif;
+      color: #7a6a50;
+      letter-spacing: 1.5px;
     }
-    .notice-bar strong { color: #8b0000; }
+    .notice-bar strong { color: #c9a84c; font-weight: 500; }
 
     /* Hero */
     .hero {
-      background: linear-gradient(160deg, #6b1515 0%, #8b2222 45%, #4a0e0e 100%);
-      color: #fff;
+      background: #080808;
+      color: #e8dcc8;
       text-align: center;
-      padding: 90px 40px 80px;
-      border-bottom: 5px solid #daa520;
+      padding: 120px 40px 110px;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 65%);
+      pointer-events: none;
     }
     .hero-eyebrow {
-      font-size: 12px;
-      letter-spacing: 4px;
+      font-size: 11px;
+      letter-spacing: 5px;
       text-transform: uppercase;
-      color: #daa520;
-      font-family: Arial, sans-serif;
-      margin-bottom: 22px;
+      color: #c9a84c;
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 28px;
     }
     .hero h1 {
-      font-size: 58px;
-      font-weight: bold;
-      line-height: 1.1;
-      margin-bottom: 16px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      color: #f0e8d4;
     }
     .hero-tagline {
-      font-size: 19px;
-      color: #f5e6c8;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: #8a7a60;
       font-style: italic;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
     .hero-years {
-      font-size: 13px;
-      color: #c4a882;
-      margin-bottom: 40px;
-      font-family: Arial, sans-serif;
+      font-size: 10px;
+      color: #4a3a24;
+      margin-bottom: 50px;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
     }
     .hero-hours {
       display: inline-block;
-      background: rgba(0,0,0,0.28);
-      border: 1px solid rgba(218,165,32,0.45);
-      padding: 14px 36px;
-      border-radius: 3px;
-      font-size: 14px;
-      color: #f5e6c8;
-      font-family: Arial, sans-serif;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 16px 44px;
+      font-size: 12px;
+      color: #8a7a60;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1.5px;
       line-height: 2;
-      margin-bottom: 34px;
+      margin-bottom: 48px;
     }
-    .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn-gold {
-      background: #daa520;
-      color: #fff;
-      padding: 13px 30px;
-      font-size: 15px;
-      font-weight: bold;
+      background: #c9a84c;
+      color: #0d0d0d;
+      padding: 14px 36px;
+      font-size: 10px;
+      font-weight: 500;
       text-decoration: none;
-      border-radius: 3px;
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      transition: background 0.2s;
     }
+    .btn-gold:hover { background: #d4b862; }
     .btn-outline-white {
       background: transparent;
-      color: #f5e6c8;
-      padding: 13px 30px;
-      font-size: 15px;
+      color: #e8dcc8;
+      padding: 14px 36px;
+      font-size: 10px;
       text-decoration: none;
-      border: 2px solid rgba(245,230,200,0.6);
-      border-radius: 3px;
-      font-family: Arial, sans-serif;
+      border: 1px solid rgba(232,220,200,0.25);
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      transition: border-color 0.2s;
     }
+    .btn-outline-white:hover { border-color: rgba(232,220,200,0.55); }
 
     /* Ornament */
     .ornament {
       text-align: center;
-      padding: 36px 0 0;
-      font-size: 22px;
-      color: #8b1a1a;
+      padding: 48px 0 0;
+      font-size: 16px;
+      color: #c9a84c;
       opacity: 0.35;
-      letter-spacing: 12px;
+      letter-spacing: 18px;
     }
 
     /* Sections */
     .section {
-      max-width: 980px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 60px 40px;
+      padding: 80px 40px;
     }
     .section-title {
-      font-size: 34px;
-      font-weight: bold;
-      color: #6b1515;
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: #f0e8d4;
       display: inline-block;
-      border-bottom: 3px solid #daa520;
-      padding-bottom: 6px;
-      margin-bottom: 10px;
+      border-bottom: 1px solid #c9a84c;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
     }
     .section-sub {
-      font-size: 15px;
-      color: #7a5c3a;
-      margin-bottom: 44px;
-      font-family: Arial, sans-serif;
+      font-size: 13px;
+      color: #5a4a30;
+      margin-bottom: 52px;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.5px;
     }
 
     /* Menu */
-    .menu-category { margin-bottom: 52px; }
+    .menu-category { margin-bottom: 60px; }
     .menu-category h3 {
-      font-size: 22px;
-      color: #8b1a1a;
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 400;
       font-style: italic;
-      border-left: 4px solid #daa520;
-      padding-left: 12px;
-      margin-bottom: 20px;
+      color: #c9a84c;
+      border-left: 1px solid #c9a84c;
+      padding-left: 16px;
+      margin-bottom: 24px;
     }
     .menu-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0 40px;
+      gap: 0 60px;
     }
     @media(max-width: 600px) { .menu-grid { grid-template-columns: 1fr; } }
     .menu-item {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 13px 0;
-      border-bottom: 1px dotted #c8a97a;
-      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      gap: 20px;
     }
     .menu-item-info h4 {
-      font-size: 15px;
-      font-weight: bold;
-      color: #2c1a0e;
-      margin-bottom: 3px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: #e8dcc8;
+      margin-bottom: 4px;
+      letter-spacing: 0.3px;
     }
     .menu-item-info p {
-      font-size: 13px;
-      color: #7a5c3a;
-      font-family: Arial, sans-serif;
+      font-size: 12px;
+      color: #5a4a30;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.3px;
     }
     .menu-price {
-      font-size: 15px;
-      font-weight: bold;
-      color: #6b1515;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #c9a84c;
       white-space: nowrap;
-      font-family: Arial, sans-serif;
       padding-top: 2px;
     }
 
     /* About */
     .about-bg {
-      background: #fdf0dc;
-      border-top: 1px solid #e8d5a8;
-      border-bottom: 1px solid #e8d5a8;
+      background: #0a0a0a;
+      border-top: 1px solid rgba(201,168,76,0.12);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
     }
     .about-inner {
-      max-width: 980px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 60px 40px;
+      padding: 80px 40px;
       display: grid;
       grid-template-columns: 1fr 1.7fr;
-      gap: 52px;
+      gap: 60px;
       align-items: center;
     }
     @media(max-width: 680px) { .about-inner { grid-template-columns: 1fr; } }
     .about-photo {
-      background: linear-gradient(145deg, #8b2222, #5a1010);
-      border-radius: 4px;
+      background: linear-gradient(145deg, #181818, #101010);
       height: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 90px;
-      border: 4px solid #daa520;
+      border: 1px solid rgba(201,168,76,0.2);
     }
     .about-text h2 {
-      font-size: 30px;
-      color: #6b1515;
-      margin-bottom: 18px;
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: #f0e8d4;
+      margin-bottom: 24px;
     }
     .about-text p {
-      font-size: 15px;
-      color: #4a3520;
-      line-height: 1.9;
-      margin-bottom: 14px;
-      font-family: Arial, sans-serif;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      color: #7a6a50;
+      line-height: 2;
+      margin-bottom: 16px;
     }
     .about-signature {
-      font-size: 21px;
-      color: #8b1a1a;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: #c9a84c;
       font-style: italic;
-      margin-top: 10px;
+      margin-top: 14px;
     }
 
     /* Hours */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 52px;
+      gap: 60px;
     }
     @media(max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
     .info-box h3 {
-      font-size: 20px;
-      color: #6b1515;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #daa520;
-      padding-bottom: 8px;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: #f0e8d4;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(201,168,76,0.25);
+      padding-bottom: 10px;
     }
     .hours-table {
       width: 100%;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
       border-collapse: collapse;
     }
-    .hours-table td { padding: 8px 0; color: #4a3520; }
+    .hours-table td {
+      padding: 10px 0;
+      color: #7a6a50;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
     .hours-table td:last-child {
       text-align: right;
-      font-weight: bold;
-      color: #2c1a0e;
+      font-weight: 400;
+      color: #e8dcc8;
     }
     .address-block {
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      color: #4a3520;
-      line-height: 2;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      color: #7a6a50;
+      line-height: 2.4;
     }
     .phone {
       display: block;
-      font-size: 24px;
-      font-weight: bold;
-      color: #6b1515;
-      margin-bottom: 14px;
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 400;
+      color: #c9a84c;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
     }
     .dine-only-badge {
       display: inline-block;
-      margin-top: 18px;
-      background: #fff8e1;
-      border: 1px solid #e6c47a;
-      color: #5a4000;
-      padding: 6px 14px;
-      border-radius: 3px;
-      font-size: 13px;
-      font-family: Arial, sans-serif;
+      margin-top: 20px;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.2);
+      color: #c9a84c;
+      padding: 8px 16px;
+      font-size: 11px;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1px;
     }
 
     /* Footer */
     footer {
-      background: #2c1a0e;
-      color: #8a6840;
-      padding: 36px 40px;
+      background: #080808;
+      color: #3a2a14;
+      padding: 48px 40px;
       text-align: center;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      border-top: 4px solid #6b1515;
-      line-height: 2;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      border-top: 1px solid rgba(201,168,76,0.12);
+      line-height: 2.4;
+      letter-spacing: 0.8px;
     }
     footer .footer-name {
-      color: #daa520;
-      font-size: 17px;
-      font-family: Georgia, serif;
-      font-weight: bold;
+      font-family: 'Playfair Display', serif;
+      color: #c9a84c;
+      font-size: 20px;
+      font-weight: 400;
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
     }
   </style>
 </head>
@@ -363,9 +417,7 @@
     </nav>
   </header>
 
-  <div class="notice-bar" data-i18n="notice">
-    Now Available on DoorDash! 🛵 Order online →
-  </div>
+  <div class="notice-bar" data-i18n="notice">🍽️ &nbsp;<strong>Dine-In Only</strong>&nbsp; · &nbsp;No delivery or takeout at this time&nbsp; · &nbsp;Walk-ins welcome · Call ahead for parties of 6+</div>
 
   <!-- Hero -->
   <section class="hero">
@@ -561,7 +613,7 @@
         nav_story: "Our Story",
         nav_hours: "Hours",
         nav_reserve: "Reserve a Table",
-        notice: "Now Available on DoorDash! 🛵 Order online →",
+        notice: "🍽️ &nbsp;<strong>Dine-In Only</strong>&nbsp; · &nbsp;No delivery or takeout at this time&nbsp; · &nbsp;Walk-ins welcome · Call ahead for parties of 6+",
         hero_eyebrow: "Italian-American Home Cooking · Springfield, IL",
         hero_h1: "Mama Rosa's Kitchen",
         hero_tagline: '"Where every meal tastes like Sunday dinner"',
@@ -626,7 +678,7 @@
         nav_story: "私たちのストーリー",
         nav_hours: "営業時間",
         nav_reserve: "テーブルを予約",
-        notice: "Now Available on DoorDash! 🛵 Order online →",
+        notice: "🍽️ &nbsp;<strong>Dine-In Only</strong>&nbsp; · &nbsp;No delivery or takeout at this time&nbsp; · &nbsp;Walk-ins welcome · Call ahead for parties of 6+",
         hero_eyebrow: "イタリア系アメリカン家庭料理 · スプリングフィールド, IL",
         hero_h1: "マーマ・ローザのキッチン",
         hero_tagline: "「毎日の食事が、日曜のディナーのように」",
