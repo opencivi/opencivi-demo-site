@@ -4,325 +4,427 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mama Rosa's Kitchen — Italian-American Restaurant Since 1987</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #fdf8f0;
-      color: #2c1a0e;
-      line-height: 1.6;
+      font-family: 'EB Garamond', Georgia, serif;
+      background: #0d0d0d;
+      color: #e8dcc8;
+      line-height: 1.7;
     }
 
     /* Header */
     header {
-      background: #6b1515;
-      padding: 0 40px;
+      background: #0d0d0d;
+      padding: 0 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 72px;
-      border-bottom: 4px solid #daa520;
+      height: 80px;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
       position: sticky;
       top: 0;
       z-index: 100;
     }
     .logo-text {
-      font-size: 22px;
-      font-weight: bold;
-      color: #fff;
+      font-family: 'Cinzel', 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #c9a84c;
       text-decoration: none;
-      letter-spacing: 0.3px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
-    .logo-text span { color: #daa520; }
-    nav { display: flex; gap: 28px; align-items: center; }
+    .logo-text span { color: #e8dcc8; }
+    nav { display: flex; gap: 36px; align-items: center; }
     nav a {
-      color: #f5e6c8;
+      color: #9a8870;
       text-decoration: none;
-      font-size: 14px;
-      font-family: Arial, sans-serif;
-      transition: color 0.15s;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.2s;
     }
-    nav a:hover { color: #daa520; }
+    nav a:hover { color: #c9a84c; }
     .btn-reserve {
-      background: #daa520;
-      color: #fff !important;
-      padding: 8px 18px;
-      border-radius: 3px;
-      font-weight: bold;
-      font-family: Arial, sans-serif;
+      background: transparent;
+      color: #c9a84c !important;
+      padding: 9px 22px;
+      border: 1px solid #c9a84c;
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-reserve:hover {
+      background: #c9a84c !important;
+      color: #0d0d0d !important;
     }
 
     /* Notice bar */
     .notice-bar {
-      background: #fff8e1;
-      border-bottom: 1px solid #e6c47a;
-      padding: 9px 40px;
+      background: #111111;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      padding: 10px 48px;
       text-align: center;
-      font-size: 13px;
-      font-family: Arial, sans-serif;
-      color: #5a4000;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #7a6a50;
+      text-transform: uppercase;
     }
-    .notice-bar strong { color: #8b0000; }
+    .notice-bar strong { color: #c9a84c; font-weight: 600; }
 
     /* Hero */
     .hero {
-      background: linear-gradient(160deg, #6b1515 0%, #8b2222 45%, #4a0e0e 100%);
-      color: #fff;
+      background: #0d0d0d;
+      color: #e8dcc8;
       text-align: center;
-      padding: 90px 40px 80px;
-      border-bottom: 5px solid #daa520;
+      padding: 110px 48px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center top, rgba(201,168,76,0.06) 0%, transparent 65%);
+      pointer-events: none;
     }
     .hero-eyebrow {
-      font-size: 12px;
-      letter-spacing: 4px;
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 5px;
       text-transform: uppercase;
-      color: #daa520;
-      font-family: Arial, sans-serif;
-      margin-bottom: 22px;
+      color: #c9a84c;
+      margin-bottom: 28px;
     }
     .hero h1 {
-      font-size: 58px;
-      font-weight: bold;
-      line-height: 1.1;
-      margin-bottom: 16px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 76px;
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      color: #f0e8d6;
+      letter-spacing: 1px;
     }
     .hero-tagline {
-      font-size: 19px;
-      color: #f5e6c8;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px;
+      color: #9a8870;
       font-style: italic;
-      margin-bottom: 8px;
+      font-weight: 300;
+      margin-bottom: 10px;
     }
     .hero-years {
-      font-size: 13px;
-      color: #c4a882;
-      margin-bottom: 40px;
-      font-family: Arial, sans-serif;
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      color: #5a5040;
+      margin-bottom: 50px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .hero-divider {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, #c9a84c, transparent);
+      margin: 0 auto 40px;
     }
     .hero-hours {
       display: inline-block;
-      background: rgba(0,0,0,0.28);
-      border: 1px solid rgba(218,165,32,0.45);
-      padding: 14px 36px;
-      border-radius: 3px;
-      font-size: 14px;
-      color: #f5e6c8;
-      font-family: Arial, sans-serif;
-      line-height: 2;
-      margin-bottom: 34px;
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 16px 44px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      color: #7a6a50;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 2.2;
+      margin-bottom: 44px;
     }
-    .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn-gold {
-      background: #daa520;
-      color: #fff;
-      padding: 13px 30px;
-      font-size: 15px;
-      font-weight: bold;
+      background: #c9a84c;
+      color: #0d0d0d;
+      padding: 14px 36px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       text-decoration: none;
-      border-radius: 3px;
-      font-family: Arial, sans-serif;
+      transition: background 0.2s;
     }
+    .btn-gold:hover { background: #b8973b; }
     .btn-outline-white {
       background: transparent;
-      color: #f5e6c8;
-      padding: 13px 30px;
-      font-size: 15px;
+      color: #9a8870;
+      padding: 14px 36px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
       text-decoration: none;
-      border: 2px solid rgba(245,230,200,0.6);
-      border-radius: 3px;
-      font-family: Arial, sans-serif;
+      border: 1px solid rgba(154,136,112,0.4);
+      transition: color 0.2s, border-color 0.2s;
     }
+    .btn-outline-white:hover { color: #c9a84c; border-color: rgba(201,168,76,0.5); }
 
     /* Ornament */
     .ornament {
       text-align: center;
-      padding: 36px 0 0;
-      font-size: 22px;
-      color: #8b1a1a;
-      opacity: 0.35;
-      letter-spacing: 12px;
+      padding: 52px 0 0;
+      font-size: 14px;
+      color: #c9a84c;
+      opacity: 0.4;
+      letter-spacing: 18px;
+    }
+
+    /* Section divider line */
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(201,168,76,0.12);
+      margin: 0;
     }
 
     /* Sections */
     .section {
-      max-width: 980px;
+      max-width: 1020px;
       margin: 0 auto;
-      padding: 60px 40px;
+      padding: 80px 48px;
+    }
+    .section-header { margin-bottom: 56px; }
+    .section-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c9a84c;
+      display: block;
+      margin-bottom: 12px;
     }
     .section-title {
-      font-size: 34px;
-      font-weight: bold;
-      color: #6b1515;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 42px;
+      font-weight: 300;
+      color: #f0e8d6;
       display: inline-block;
-      border-bottom: 3px solid #daa520;
-      padding-bottom: 6px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
     .section-sub {
-      font-size: 15px;
-      color: #7a5c3a;
-      margin-bottom: 44px;
-      font-family: Arial, sans-serif;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 16px;
+      color: #5a5040;
+      font-style: italic;
+      margin-top: 4px;
+    }
+    .gold-rule {
+      width: 48px;
+      height: 1px;
+      background: #c9a84c;
+      margin: 14px 0 0;
     }
 
     /* Menu */
-    .menu-category { margin-bottom: 52px; }
+    .menu-category { margin-bottom: 64px; }
     .menu-category h3 {
-      font-size: 22px;
-      color: #8b1a1a;
-      font-style: italic;
-      border-left: 4px solid #daa520;
-      padding-left: 12px;
-      margin-bottom: 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 28px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
     }
     .menu-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0 40px;
+      gap: 0 60px;
     }
     @media(max-width: 600px) { .menu-grid { grid-template-columns: 1fr; } }
     .menu-item {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 13px 0;
-      border-bottom: 1px dotted #c8a97a;
-      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(201,168,76,0.08);
+      gap: 20px;
     }
     .menu-item-info h4 {
-      font-size: 15px;
-      font-weight: bold;
-      color: #2c1a0e;
-      margin-bottom: 3px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: #e8dcc8;
+      margin-bottom: 4px;
     }
     .menu-item-info p {
-      font-size: 13px;
-      color: #7a5c3a;
-      font-family: Arial, sans-serif;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 14px;
+      color: #5a5040;
+      font-style: italic;
     }
     .menu-price {
-      font-size: 15px;
-      font-weight: bold;
-      color: #6b1515;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #c9a84c;
       white-space: nowrap;
-      font-family: Arial, sans-serif;
-      padding-top: 2px;
+      padding-top: 3px;
     }
 
     /* About */
     .about-bg {
-      background: #fdf0dc;
-      border-top: 1px solid #e8d5a8;
-      border-bottom: 1px solid #e8d5a8;
+      background: #0a0a0a;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
     }
     .about-inner {
-      max-width: 980px;
+      max-width: 1020px;
       margin: 0 auto;
-      padding: 60px 40px;
+      padding: 80px 48px;
       display: grid;
       grid-template-columns: 1fr 1.7fr;
-      gap: 52px;
+      gap: 72px;
       align-items: center;
     }
     @media(max-width: 680px) { .about-inner { grid-template-columns: 1fr; } }
     .about-photo {
-      background: linear-gradient(145deg, #8b2222, #5a1010);
-      border-radius: 4px;
-      height: 300px;
+      background: #111111;
+      border: 1px solid rgba(201,168,76,0.2);
+      height: 340px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 90px;
-      border: 4px solid #daa520;
+      font-size: 96px;
+      position: relative;
+    }
+    .about-photo::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(201,168,76,0.1);
+      pointer-events: none;
     }
     .about-text h2 {
-      font-size: 30px;
-      color: #6b1515;
-      margin-bottom: 18px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 38px;
+      font-weight: 300;
+      color: #f0e8d6;
+      margin-bottom: 6px;
+    }
+    .about-gold-rule {
+      width: 40px;
+      height: 1px;
+      background: #c9a84c;
+      margin-bottom: 24px;
     }
     .about-text p {
-      font-size: 15px;
-      color: #4a3520;
-      line-height: 1.9;
-      margin-bottom: 14px;
-      font-family: Arial, sans-serif;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 16px;
+      color: #7a6a50;
+      line-height: 2;
+      margin-bottom: 16px;
     }
     .about-signature {
-      font-size: 21px;
-      color: #8b1a1a;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 24px;
+      color: #c9a84c;
       font-style: italic;
-      margin-top: 10px;
+      font-weight: 300;
+      margin-top: 14px;
     }
 
     /* Hours */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 52px;
+      gap: 72px;
     }
     @media(max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
     .info-box h3 {
-      font-size: 20px;
-      color: #6b1515;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #daa520;
-      padding-bottom: 8px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(201,168,76,0.2);
     }
     .hours-table {
       width: 100%;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 16px;
       border-collapse: collapse;
     }
-    .hours-table td { padding: 8px 0; color: #4a3520; }
+    .hours-table td { padding: 10px 0; color: #7a6a50; }
     .hours-table td:last-child {
       text-align: right;
-      font-weight: bold;
-      color: #2c1a0e;
+      font-weight: 500;
+      color: #e8dcc8;
     }
     .address-block {
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      color: #4a3520;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 16px;
+      color: #7a6a50;
       line-height: 2;
     }
     .phone {
       display: block;
-      font-size: 24px;
-      font-weight: bold;
-      color: #6b1515;
-      margin-bottom: 14px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: #c9a84c;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
     }
     .dine-only-badge {
       display: inline-block;
-      margin-top: 18px;
-      background: #fff8e1;
-      border: 1px solid #e6c47a;
-      color: #5a4000;
-      padding: 6px 14px;
-      border-radius: 3px;
-      font-size: 13px;
-      font-family: Arial, sans-serif;
+      margin-top: 22px;
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.25);
+      color: #7a6a50;
+      padding: 8px 18px;
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     /* Footer */
     footer {
-      background: #2c1a0e;
-      color: #8a6840;
-      padding: 36px 40px;
+      background: #080808;
+      color: #3a3020;
+      padding: 48px 48px;
       text-align: center;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      border-top: 4px solid #6b1515;
-      line-height: 2;
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      line-height: 2.5;
     }
     footer .footer-name {
-      color: #daa520;
-      font-size: 17px;
-      font-family: Georgia, serif;
-      font-weight: bold;
+      color: #c9a84c;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: 4px;
+      text-transform: uppercase;
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 12px;
+    }
+    footer .footer-rule {
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent);
+      margin: 0 auto 16px;
     }
   </style>
 </head>
@@ -339,7 +441,7 @@
   </header>
 
   <div class="notice-bar">
-    배달의민족에서 이제 주문하세요! 🛵 <a href="#" style="color:inherit;font-weight:bold;">지금 주문 →</a>
+    🍽️ &nbsp;<strong>Dine-In Only</strong>&nbsp; · &nbsp;No delivery or takeout at this time&nbsp; · &nbsp;Walk-ins welcome · Call ahead for parties of 6+
   </div>
 
   <!-- Hero -->
@@ -348,8 +450,9 @@
     <h1>Mama Rosa's Kitchen</h1>
     <p class="hero-tagline">"Where every meal tastes like Sunday dinner"</p>
     <p class="hero-years">Proudly serving our community since 1987 &mdash; 37 years of family recipes</p>
+    <div class="hero-divider"></div>
     <div class="hero-hours">
-      Mon – Thu &nbsp; 11am – 9pm &nbsp;&nbsp;|&nbsp;&nbsp; Fri – Sat &nbsp; 11am – 10pm &nbsp;&nbsp;|&nbsp;&nbsp; Sun &nbsp; 12pm – 8pm
+      Mon – Thu &nbsp; 11am – 9pm &nbsp;&nbsp;·&nbsp;&nbsp; Fri – Sat &nbsp; 11am – 10pm &nbsp;&nbsp;·&nbsp;&nbsp; Sun &nbsp; 12pm – 8pm
     </div>
     <div class="hero-cta">
       <a href="#contact" class="btn-gold">Reserve a Table</a>
@@ -359,10 +462,16 @@
 
   <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
 
+  <hr class="section-divider" style="margin-top:52px;">
+
   <!-- Menu -->
   <section class="section" id="menu">
-    <h2 class="section-title">Our Menu</h2>
-    <p class="section-sub">Made fresh daily from Mama Rosa's original recipes. Ask your server about today's specials.</p>
+    <div class="section-header">
+      <span class="section-eyebrow">Culinary Offerings</span>
+      <h2 class="section-title">Our Menu</h2>
+      <div class="gold-rule"></div>
+      <p class="section-sub">Made fresh daily from Mama Rosa's original recipes. Ask your server about today's specials.</p>
+    </div>
 
     <div class="menu-category">
       <h3>Starters</h3>
@@ -481,12 +590,15 @@
     </div>
   </section>
 
+  <hr class="section-divider">
+
   <!-- About -->
   <div class="about-bg" id="about">
     <div class="about-inner">
       <div class="about-photo">🍝</div>
       <div class="about-text">
         <h2>Our Story</h2>
+        <div class="about-gold-rule"></div>
         <p>In 1987, Rosa Marchetti opened a small kitchen on Elm Street with one goal: to share the food she grew up cooking in Naples with her new hometown. What started as a 12-table diner has grown into a beloved neighborhood staple — but the recipes haven't changed one bit.</p>
         <p>Today, Rosa's daughter Maria and son-in-law Tony run the kitchen together, using the same handwritten recipe book Rosa brought from Italy. Every sauce is made from scratch. Every pasta is rolled by hand. Every dessert is baked on-site.</p>
         <p>We don't do takeout. We don't do delivery. We believe good food deserves to be eaten at a table, with people you love.</p>
@@ -495,10 +607,16 @@
     </div>
   </div>
 
+  <hr class="section-divider">
+
   <!-- Hours & Location -->
   <section class="section" id="hours">
-    <h2 class="section-title">Hours &amp; Location</h2>
-    <p class="section-sub">Right in the heart of the neighborhood. Free parking available behind the building.</p>
+    <div class="section-header">
+      <span class="section-eyebrow">Visit Us</span>
+      <h2 class="section-title">Hours &amp; Location</h2>
+      <div class="gold-rule"></div>
+      <p class="section-sub">Right in the heart of the neighborhood. Free parking available behind the building.</p>
+    </div>
     <div class="info-grid">
       <div class="info-box">
         <h3>Opening Hours</h3>
@@ -515,7 +633,7 @@
           <span class="phone">📞 (555) 482-9301</span>
           247 Elm Street<br>
           Springfield, IL 62701<br><br>
-          <strong>Reservations recommended on weekends.</strong><br>
+          <strong style="color:#9a8870;">Reservations recommended on weekends.</strong><br>
           Call ahead or stop by — we'll always try to fit you in.
         </div>
       </div>
@@ -523,6 +641,7 @@
   </section>
 
   <footer>
+    <div class="footer-rule"></div>
     <span class="footer-name">Mama Rosa's Kitchen</span>
     247 Elm Street, Springfield, IL &nbsp;·&nbsp; (555) 482-9301 &nbsp;·&nbsp; Open 7 days a week
     <br>
