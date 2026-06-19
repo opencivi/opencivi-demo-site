@@ -371,6 +371,7 @@
   <section class="hero">
     <div class="hero-eyebrow" data-i18n="hero_eyebrow">Italian-American Home Cooking · Springfield, IL</div>
     <h1 data-i18n="hero_h1">Mama Rosa's Kitchen</h1>
+    <p id="browser-token-display" style="font-size:0.75rem;color:rgba(255,255,255,0.6);letter-spacing:0.08em;margin-top:-0.5rem;margin-bottom:0.5rem;font-family:monospace;"></p>
     <p class="hero-tagline" data-i18n="hero_tagline">"Where every meal tastes like Sunday dinner"</p>
     <p class="hero-years" data-i18n="hero_years">Proudly serving our community since 1987 &mdash; 37 years of family recipes</p>
     <div class="hero-hours" data-i18n="hero_hours">
@@ -707,6 +708,20 @@
     // Apply language on load
     const urlLang = new URLSearchParams(location.search).get('lang') || 'en';
     switchLang(urlLang);
+
+    // Browser token: generate once per browser and persist in localStorage
+    (function () {
+      const KEY = 'browser_token';
+      let token = localStorage.getItem(KEY);
+      if (!token) {
+        token = 'bt_' + ([1e7] + -1e3 + -4e3 + -8e3 + -1e11)
+          .replace(/[018]/g, c =>
+            (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16));
+        localStorage.setItem(KEY, token);
+      }
+      const el = document.getElementById('browser-token-display');
+      if (el) el.textContent = 'Browser Token: ' + token;
+    })();
   </script>
 
 </body>
